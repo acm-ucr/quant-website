@@ -27,7 +27,7 @@ const hanken_grotesk = Hanken_Grotesk({
   subsets: ["latin"],
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--hanken_grotesk-font",
+  variable: "--hanken-grotesk-font",
 });
 
 export const metadata = {

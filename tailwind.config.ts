@@ -3,11 +3,11 @@ module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
+      fontFamily: { 
         jost: ["var(--jost-font)"],
         roboto: ["var(--roboto-font)"],
         questrial: ["var(--questrial-font)"],
-        hanken-grotesk: ["var(--hanken_grotesk-font)"],
+        hanken: ["var(--hanken_grotesk-font)"],
       },
     },
   },

@@ -16,10 +16,8 @@ const Example = (props: {
         </div>
       </div>
       <div className="w-1/2 bg-blue-600 p-5 text-center text-white">
-        {" "}
         {props.text4}
       </div>
-      {/* Hint: Add another box/div here similarly to line 4 */}
     </div>
   );
 };

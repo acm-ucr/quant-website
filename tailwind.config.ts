@@ -7,7 +7,7 @@ module.exports = {
         jost: ["var(--jost-font)"],
         roboto: ["var(--roboto-font)"],
         questrial: ["var(--questrial-font)"],
-        hanken: ["var(--hanken_grotesk-font)"],
+        hanken: ["var(--hanken-grotesk-font)"],
       },
     },
   },

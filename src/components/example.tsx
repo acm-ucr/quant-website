@@ -10,11 +10,9 @@ const Example = (props: { text1: string; text2: string; text3: string }) => {
           {props.text2}
         </div>
       </div>
-      {
         <div className="w-1/2 bg-blue-600 p-5 text-center text-white">
           {props.text3}
         </div>
-      }
     </div>
   );
 };

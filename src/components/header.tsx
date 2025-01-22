@@ -1,27 +1,36 @@
+import Image from 'next/image'
+import leftLine from "/public/header/left-line.svg";
+import rightLine from "/public/header/right-line.svg";
+
 const Header = (props: { title: string }) => {
   return (
-    <header className="w-full bg-gradient-to-r from-blue-900 to-blue-800 py-5">
+    <div className="w-full bg-gradient-to-r from-blue-900 to-blue-800 py-5">
       <div className="mx-auto flex w-3/4 items-center justify-center gap-20">
-        <img
-          src="/header/left-line.svg"
-          alt=""
-          aria-hidden="true"
-          className="flex h-full"
+        <Image
+           src={leftLine}
+           alt="left-line"
+           aria-hidden="true"
+           width={360} 
+           height={20}  
+           className="flex h-full"
         />
 
-        <h1 className="text-center font-hanken text-[45px] font-bold text-white">
+        <h1 className="text-center font-hanken text-5xl font-bold text-white">
           {props.title}
         </h1>
 
-        <img
-          src="/header/right-line.svg"
-          alt=""
+        <Image
+          src={rightLine}
+          alt="right-line"
           aria-hidden="true"
+          width={360} 
+          height={20}  
           className="flex h-full"
         />
       </div>
-    </header>
+    </div>
   );
 };
 
 export default Header;
+

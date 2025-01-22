@@ -1,28 +1,23 @@
 const Header = (props: { title: string }) => {
   return (
-    <header
-      className="w-full bg-gradient-to-r from-blue-900 to-blue-800 p-5"
-    >
-      <div className="flex items-center justify-between max-w-[1440px] mx-auto">
-        {/* Left Line */}
+    <header className="w-full bg-gradient-to-r from-blue-900 to-blue-800 py-5">
+      <div className="mx-auto flex w-3/4 items-center justify-center gap-20">
         <img
           src="/header/left-line.svg"
           alt=""
           aria-hidden="true"
-          className="h-[20px] w-[355px]"
+          className="flex h-full"
         />
 
-        {/* Title */}
-        <h1 className="text-white text-center text-[45px] font-bold font-hanken w-[450px] h-[60px]">
+        <h1 className="text-center font-hanken text-[45px] font-bold text-white">
           {props.title}
         </h1>
 
-        {/* Right Line */}
         <img
           src="/header/right-line.svg"
           alt=""
           aria-hidden="true"
-          className="h-[20px] w-[355px]"
+          className="flex h-full"
         />
       </div>
     </header>

@@ -1,7 +1,13 @@
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/utils/react-query";
-import { Jost, Roboto, Questrial, Hanken_Grotesk, Istok_Web } from "next/font/google";
-import Footer from '@/components/footer';
+import {
+  Jost,
+  Roboto,
+  Questrial,
+  Hanken_Grotesk,
+  Istok_Web,
+} from "next/font/google";
+import Footer from "@/components/footer";
 
 const jost = Jost({
   subsets: ["latin"],

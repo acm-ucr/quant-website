@@ -5,8 +5,6 @@ import { ChevronRight } from "lucide-react";
 const Footer = () => {
   return (
     <div className="w-full">
-      {" "}
-      {/* Remove BG when done*/}
       <div className="container mx-auto text-white">
         <div className="relative">
           <div className="h-[2px] w-full bg-white" />

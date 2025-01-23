@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex items-center justify-between pb-12 pl-2 pt-4">
           <div className="flex items-center gap-5">
             <NextImage
-              src="/footer/logo.png"
+              src="/footer/logo.webp"
               alt="logo"
               width={70.8}
               height={82.4}

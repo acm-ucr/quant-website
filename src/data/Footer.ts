@@ -1,5 +1,9 @@
 import { Mail } from "lucide-react";
-import { SiInstagram, SiLinkedin, SiGithub } from "@icons-pack/react-simple-icons";
+import {
+  SiInstagram,
+  SiLinkedin,
+  SiGithub,
+} from "@icons-pack/react-simple-icons";
 
 export const FooterArray = () => [
   {

@@ -17,11 +17,7 @@ const Footer = () => {
 
         <div className="flex items-center justify-between pb-12 pl-2 pt-4">
           <div className="flex items-center gap-5">
-            <Image
-              src={footerLogo}
-              alt="logo"
-              className="h-20 w-20"
-            />
+            <Image src={footerLogo} alt="logo" className="h-20 w-20" />
             <div className="flex flex-col font-istok-web text-xl font-semibold">
               <div>Quant Club</div>
               <div>at UCR</div>

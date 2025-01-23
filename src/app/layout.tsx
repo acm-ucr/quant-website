@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/utils/react-query";
-import { Jost, Roboto, Questrial, Hanken_Grotesk } from "next/font/google";
+import { Jost, Roboto, Questrial, Hanken_Grotesk, Istok_Web } from "next/font/google";
+import Footer from '@/components/footer';
 
 const jost = Jost({
   subsets: ["latin"],
@@ -30,6 +31,13 @@ const hanken_grotesk = Hanken_Grotesk({
   variable: "--hanken-grotesk-font",
 });
 
+const istok_web = Istok_Web({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700"],
+  variable: "--istok-web-font",
+});
+
 export const metadata = {
   title: "UCR Quant",
   description: "Quantitative Analysis Club @ UCR",
@@ -43,9 +51,10 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable}`}
+        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable}`}
       >
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+        <Footer />
       </body>
     </html>
   );

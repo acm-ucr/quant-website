@@ -8,6 +8,7 @@ module.exports = {
         roboto: ["var(--roboto-font)"],
         questrial: ["var(--questrial-font)"],
         hanken: ["var(--hanken-grotesk-font)"],
+        "istok-web": ["var(--istok-web-font)"],
       },
     },
   },

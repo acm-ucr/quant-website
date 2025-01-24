@@ -10,8 +10,6 @@ const Header = (props: { title: string }) => {
           src={leftLine}
           alt="left-line"
           aria-hidden="true"
-          width={360}
-          height={20}
           className="flex h-full"
         />
 
@@ -23,8 +21,6 @@ const Header = (props: { title: string }) => {
           src={rightLine}
           alt="right-line"
           aria-hidden="true"
-          width={360}
-          height={20}
           className="flex h-full"
         />
       </div>

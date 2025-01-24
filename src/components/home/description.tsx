@@ -1,28 +1,25 @@
 import Image from "next/image";
-import React from "react";
+import Chart from "@/public/assets/chartimage.webp";
 
 interface DescriptionProps {
   title: string;
   description: string;
-  image: string;
 }
 
-const Description = ({ title, description, image }: DescriptionProps) => {
+const Description = ({ title, description }: DescriptionProps) => {
   return (
-    <div className="relative mx-10 flex max-w-7xl flex-col">
+    <div className="relative mx-10 flex h-fit max-w-7xl flex-col">
       <div className="mb-10 px-10 font-hanken text-5xl font-bold text-white">
         {title}
       </div>
       <div className="max-h-64 w-fit overflow-auto pl-10 pr-10 font-roboto text-lg text-white">
         {description}
       </div>
-      <div className="relative m-0 flex justify-end p-0">
+      <div className="flex w-full flex-row justify-end">
         <Image
-          className=""
-          src={image}
-          width={120}
-          height={120}
+          src={Chart}
           alt="description-image"
+          className="h-full max-h-28 w-full max-w-28 object-cover"
         />
       </div>
       <div

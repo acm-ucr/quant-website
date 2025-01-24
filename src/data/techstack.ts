@@ -3,10 +3,7 @@ const techStack = [
   { image: "/techstack/pandas.png", link: "https://pandas.pydata.org/" },
   { image: "techstack/stata.png", link: "https://www.stata.com/" },
   { image: "/techstack/tailwind.png", link: "https://tailwindcss.com" },
-  {
-    image: "/techstack/flask.png",
-    link: "https://flask.palletsprojects.com/en/stable/",
-  },
+  { image: "/techstack/flask.png", link: "https://flask.palletsprojects.com" },
   { image: "/techstack/ocaml.png", link: "https://ocaml.org/" },
   { image: "/techstack/numpy.png", link: "https://numpy.org" },
 ];

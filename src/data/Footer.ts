@@ -1,4 +1,9 @@
-import { Mail, Instagram, Linkedin, Github } from "lucide-react";
+import { Mail } from "lucide-react";
+import {
+  SiInstagram,
+  SiLinkedin,
+  SiGithub,
+} from "@icons-pack/react-simple-icons";
 
 export const FooterArray = () => [
   {
@@ -6,15 +11,15 @@ export const FooterArray = () => [
     link: "#",
   },
   {
-    icon: Instagram,
+    icon: SiInstagram,
     link: "#",
   },
   {
-    icon: Linkedin,
+    icon: SiLinkedin,
     link: "#",
   },
   {
-    icon: Github,
+    icon: SiGithub,
     link: "#",
   },
 ];

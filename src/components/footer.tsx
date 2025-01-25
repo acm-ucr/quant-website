@@ -1,6 +1,8 @@
 import { FooterArray } from "@/data/Footer";
-import NextImage from "next/image";
+import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import footerLogo from "@/public/footer/logo.webp";
 
 const Footer = () => {
   return (
@@ -15,12 +17,7 @@ const Footer = () => {
 
         <div className="flex items-center justify-between pb-12 pl-2 pt-4">
           <div className="flex items-center gap-5">
-            <NextImage
-              src="/footer/image.webp"
-              alt="logo"
-              width={70.8}
-              height={82.4}
-            />
+            <Image src={footerLogo} alt="logo" className="h-20 w-20" />
             <div className="flex flex-col font-istok-web text-xl font-semibold">
               <div>Quant Club</div>
               <div>at UCR</div>
@@ -34,9 +31,9 @@ const Footer = () => {
             <div className="flex gap-8">
               {FooterArray().map((item, i) => {
                 return (
-                  <a key={i} href={item.link} className="text-white">
+                  <Link key={i} href={item.link} className="text-white">
                     <item.icon size={24} />
-                  </a>
+                  </Link>
                 );
               })}
             </div>

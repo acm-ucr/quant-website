@@ -55,7 +55,7 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#100E37]">
       <body
         className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable}`}
       >

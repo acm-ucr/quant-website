@@ -1,3 +1,7 @@
+import Image from "next/image";
+import locationIcon from "@/public/icons/locationIcon.svg";
+import timeIcon from "@/public/icons/timeIcon.svg";
+
 const EventCard = (props: {
   day: string;
   date: string;
@@ -20,11 +24,18 @@ const EventCard = (props: {
         <div className="justify-start pl-[30px] pt-[45px] font-questrial text-4xl font-medium text-[#FFFFFF]">
           {props.title}
         </div>
-        <div className="flex h-2/8 w-1/2 flex-row gap-20 pl-[30px]">
-          <div className="h-1/8 w-1/5 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+        <div className="h-2/8 flex w-1/2 flex-row gap-20 pl-[30px]">
+          <div className="h-1/8 flex w-1/5 flex-row gap-2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+            <Image
+              src={locationIcon}
+              alt="Location Icon"
+              width={24}
+              height={24}
+            />
             {props.location}
           </div>
-          <div className="h-7/8 w-1/2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+          <div className="h-7/8 flex w-1/2 flex-row gap-2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+            <Image src={timeIcon} alt="Time Icon" width={24} height={24} />
             {props.time}
           </div>
         </div>

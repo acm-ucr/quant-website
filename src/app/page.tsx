@@ -1,9 +1,9 @@
-import Landing from "../components/home/landing";
+import Header from "../components/header";
 
 const Home = () => {
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <Landing />
+    <div className="flex h-screen w-screen items-center justify-center">
+      <Header title="UPCOMING EVENTS" />
     </div>
   );
 };

@@ -25,7 +25,7 @@ const EventCard = (props: {
           {props.title}
         </div>
         <div className="h-2/8 flex w-1/2 flex-row gap-20 pl-8">
-          <div className="h-1/8 flex w-1/5 flex-row gap-2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+          <div className="h-1/8 flex w-1/5 flex-row gap-2 pl-1 font-roboto text-lg text-[#A7D6FD]">
             <Image
               src={locationIcon}
               alt="Location Icon"
@@ -34,12 +34,12 @@ const EventCard = (props: {
             />
             {props.location}
           </div>
-          <div className="h-7/8 flex w-1/2 flex-row gap-2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
+          <div className="h-7/8 flex w-1/2 flex-row gap-2 pl-10 font-roboto text-lg text-[#A7D6FD]">
             <Image src={timeIcon} alt="Time Icon" width={24} height={24} />
             {props.time}
           </div>
         </div>
-        <div className="h-full w-5/6 pl-[30px] font-roboto text-lg text-[#BDBDBD]">
+        <div className="h-full w-5/6 pl-10 pt-2 font-roboto text-lg text-[#BDBDBD]">
           {props.description}
         </div>
       </div>

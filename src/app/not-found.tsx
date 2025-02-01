@@ -8,15 +8,15 @@ const NotFound = () => {
       <Image src={GRID} alt="grid" className="-z-10 w-4/5" />
       <div className="absolute left-1/2 top-[47%] flex w-4/5 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5">
         <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="font-mono text-6xl leading-none text-quant-white md:text-[150px]">
+          <div className="font-mono text-6xl leading-none text-quant-white md:text-9xl">
             404
-          </h1>
+          </div>
           <div className="w-2/3 border-b-4 border-[#5BC6ED]"></div>
         </div>
         <div>
-          <h2 className="font-questrial text-3xl font-bold leading-none text-quant-white">
+          <div className="font-questrial text-3xl font-bold leading-none text-quant-white">
             PAGE NOT FOUND
-          </h2>
+          </div>
         </div>
         <div className="p-9">
           <Link

@@ -21,10 +21,10 @@ const EventCard = (props: {
         </div>
       </div>
       <div className="flex h-full w-4/5 flex-col">
-        <div className="justify-start pl-[30px] pt-[45px] font-questrial text-4xl font-medium text-[#FFFFFF]">
+        <div className="justify-start pl-10 pt-10 font-questrial text-4xl font-medium text-[#FFFFFF]">
           {props.title}
         </div>
-        <div className="h-2/8 flex w-1/2 flex-row gap-20 pl-[30px]">
+        <div className="h-2/8 flex w-1/2 flex-row gap-20 pl-8">
           <div className="h-1/8 flex w-1/5 flex-row gap-2 pl-[40px] font-roboto text-lg text-[#A7D6FD]">
             <Image
               src={locationIcon}

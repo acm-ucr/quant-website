@@ -1,6 +1,7 @@
 import Image from "next/image";
+import image_src from "../../component/exampleACM.svg";
 const Project = (props: {
-  image_src: string;
+
   image_alt: string;
   name: string;
   description: string;
@@ -10,7 +11,7 @@ const Project = (props: {
       <div className="flex flex-row items-center justify-center gap-24 p-8 text-white">
         <div className="flex h-1/2 w-1/6 items-center justify-center rounded-full bg-[#94C7ED]">
           <Image
-            src={props.image_src}
+            src={image_src}
             alt={props.image_alt}
             width={70}
             height={70}

@@ -10,6 +10,15 @@ module.exports = {
         hanken: ["var(--hanken-grotesk-font)"],
         "istok-web": ["var(--istok-web-font)"],
       },
+      colors: {
+        quant: {
+          white: "#FFFFFF",
+          navy: "#0F0E37",
+          gray: "#C3D0DF",
+          "blue-100": "#A7D6FD",
+          "blue-200": "#94C7ED",
+        },
+      },
     },
   },
   plugins: [],

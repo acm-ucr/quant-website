@@ -6,7 +6,7 @@ const Project = (props: {
   description: string;
 }) => {
   return (
-    <div className="min-h-fit w-96 rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-9/12 lg:flex-col lg:text-lg">
+    <div className="min-h-fit w-3/4 rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-9/12 lg:flex-col lg:text-lg">
       <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:items-center lg:justify-center lg:gap-24 lg:p-8 lg:text-white">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:flex lg:min-h-44 lg:min-w-44 lg:items-center lg:justify-center lg:rounded-full">
           <Image

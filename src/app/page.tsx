@@ -1,7 +1,7 @@
 import Description from "@/components/home/description";
 import TechStack from "@/components/home/techstack";
 import Chart from "@/public/assets/chartimage.webp";
-import Analyze from "@/public/assets/Analyze.png";
+import Analyze from "@/public/assets/Analyze.webp";
 
 const Home = () => {
   return (

@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto text-white">
         <div className="relative">
           <div className="h-[2px] w-full bg-white" />
-          <div className="absolute right-[-8px] top-1/2 hidden -translate-y-1/2 md:block">
+          <div className="absolute right-[-8px] top-1/2 hidden -translate-y-1/2 sm:block">
             <ChevronRight className="text-white" size={20} />
           </div>
         </div>

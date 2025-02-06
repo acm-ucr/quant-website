@@ -4,9 +4,7 @@ import Header from "../../components/header";
 const Events = () => {
   return (
     <div className="min-h-screen bg-blue-950">
-      {/* Header with the title "Upcoming Events" */}
       <Header title="Upcoming Events" />
-
       <div className="flex h-full w-full items-center justify-center">
         <EventCard
           day="Mon"

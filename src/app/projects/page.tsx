@@ -4,7 +4,7 @@ import Header from "../../components/header";
 const Projects = () => {
   return (
     <div className="flex h-screen w-screen flex-wrap items-center justify-center bg-indigo-950">
-      <Header title="Projects" />
+      <Header title="PROJECTS" />
       <Project
         image_alt="Image goes here"
         name="Project Name"

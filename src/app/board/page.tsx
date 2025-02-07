@@ -3,7 +3,7 @@ import Header from "../../components/header";
 const Board = () => {
   return (
     <div>
-      <Header title="Our Board" />
+      <Header title="OUR BOARD" />
       <div className="flex h-screen w-screen items-center justify-center"></div>
     </div>
   );

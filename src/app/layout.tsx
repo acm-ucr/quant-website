@@ -1,3 +1,4 @@
+import NavBar from "@/components/navigation";
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import {
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body
         className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable}`}
       >
+        <NavBar />
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
         <Footer />
       </body>

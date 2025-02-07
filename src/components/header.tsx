@@ -29,9 +29,9 @@ const Header = (props: { title: string }) => {
 
       <div className="flex w-full py-5 md:hidden">
         <div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-4">
-          <div className="relative inline-block text-center font-hanken text-4xl font-bold text-white">
+          <div className="relative inline-block text-center font-hanken text-2xl font-bold text-white">
             {props.title}
-            <div className="mt-2 h-1 w-full bg-white"></div>
+            <div className="mt-0 h-1 w-full bg-white"></div>
           </div>
         </div>
       </div>

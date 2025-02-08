@@ -25,7 +25,7 @@ const TechStack = () => {
                 src={tech.image}
                 alt={`Tech Logo`}
                 fill
-                className="object-contain"
+                className="object-contain transition-transform duration-300 hover:scale-125"
               />
             </div>
           </Link>

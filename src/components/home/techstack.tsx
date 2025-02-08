@@ -11,7 +11,7 @@ const TechStack = () => {
       </div>
 
       {/* Tech Stack Icons */}
-      <div className="flex flex-wrap items-center justify-center gap-16 pb-10">
+      <div className="flex flex-wrap items-center justify-center gap-16 pb-10 ">
         {techStack.map((tech, index) => (
           <Link
             key={index}
@@ -25,7 +25,7 @@ const TechStack = () => {
                 src={tech.image}
                 alt={`Tech Logo`}
                 fill
-                className="object-contain"
+                className="object-contain transition-transform duration-300 hover:scale-125"
               />
             </div>
           </Link>

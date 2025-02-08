@@ -6,7 +6,7 @@ import Analyze from "@/public/assets/Analyze.webp";
 
 const Home = () => {
   return (
-    <div className="my-4 mt-24 flex min-h-screen w-screen flex-col items-center justify-center gap-64">
+    <div className="flex w-full flex-col items-center justify-center gap-10">
       <Landing />
       <Description
         title="What is Quant Club?"

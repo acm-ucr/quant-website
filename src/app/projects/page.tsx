@@ -2,7 +2,7 @@ import Project from "../../components/project/project";
 
 const Projects = () => {
   return (
-    <div className="flex h-screen w-screen flex-wrap items-center justify-center bg-indigo-950">
+    <div className="flex min-h-screen w-full flex-wrap items-center justify-center">
       <Project
         image_alt="Image goes here"
         name="Project Name"

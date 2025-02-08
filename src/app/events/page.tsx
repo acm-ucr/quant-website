@@ -2,7 +2,7 @@ import EventCard from "@/components/events/event";
 
 const Events = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-blue-950">
+    <div className="flex min-h-screen w-full items-center justify-center gap-10">
       <EventCard
         day="Mon"
         date="09"

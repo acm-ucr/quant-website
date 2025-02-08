@@ -46,7 +46,11 @@ const Footer = () => {
             <div className="flex gap-8">
               {FooterArray().map((item, i) => {
                 return (
-                  <Link key={i} href={item.link} className="text-white">
+                  <Link
+                    key={i}
+                    href={item.link}
+                    className="text-white transition-transform duration-300 hover:scale-125"
+                  >
                     <item.icon size={24} />
                   </Link>
                 );

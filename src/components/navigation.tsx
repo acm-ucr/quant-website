@@ -30,9 +30,9 @@ const Navigation = () => {
       </div>
       {/* change join link */}
       <Link
-        href={"/"}
+        href={"https://discord.gg/bzCbpzZRtH"}
         className={
-          "bg-aviatr-blue-100 flex h-14 w-[12%] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-lg font-semibold hover:underline"
+          "bg-aviatr-blue-100 flex h-14 w-[12%] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-lg font-semibold transition-transform duration-300 hover:scale-125 hover:underline"
         }
       >
         JOIN US

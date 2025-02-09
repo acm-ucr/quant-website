@@ -14,7 +14,6 @@ const Footer = () => {
             <ChevronRight className="text-white" size={20} />
           </div>
         </div>
-
         {/* mobile layout */}
         <div className="flex flex-col items-center gap-6 pb-12 pt-4 sm:hidden">
           <Image src={footerLogo} alt="logo" className="h-16 w-16" />

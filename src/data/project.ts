@@ -1,7 +1,8 @@
 import image_src from "@/public/projects/exampleACM.svg";
+import { StaticImageData } from "next/image";
 
 interface Project {
-  image: string;
+  image: StaticImageData;
   name: string;
   description: string;
 }

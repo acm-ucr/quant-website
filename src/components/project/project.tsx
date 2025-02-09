@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 const Project = (props: {
-  image_src: string;
+  image_src: StaticImageData;
   image_alt: string;
   name: string;
   description: string;

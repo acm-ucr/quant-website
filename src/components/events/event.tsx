@@ -31,11 +31,18 @@ const EventCard = (props: {
               alt="Location Icon"
               width={24}
               height={24}
+              className="invert"
             />
             {props.location}
           </div>
           <div className="h-7/8 flex w-1/2 flex-row gap-2 pl-10 font-roboto text-lg text-quant-blue-100">
-            <Image src={timeIcon} alt="Time Icon" width={24} height={24} />
+            <Image
+              src={timeIcon}
+              alt="Time Icon"
+              width={24}
+              height={24}
+              className="invert"
+            />
             {props.time}
           </div>
         </div>

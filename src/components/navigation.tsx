@@ -20,9 +20,9 @@ const Navigation = () => {
         </div>
       </div>
       <div className="flex w-1/3 flex-row items-center justify-around font-jost text-xl font-medium text-white">
-        {NavItems.map((item) => {
+        {NavItems.map((item, i) => {
           return (
-            <Link href={item.link} className="hover:underline">
+            <Link key={i} href={item.link} className="hover:underline">
               {item.name}
             </Link>
           );

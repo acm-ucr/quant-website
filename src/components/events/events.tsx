@@ -46,11 +46,15 @@ const fetchEvents = async (): Promise<EventProps[]> => {
       title: item.summary || "Unnamed Event",
       location: item.location || "N/A",
       time: item.start.dateTime
-        ? new Date(item.start.dateTime).toLocaleString()
+        ? new Date(item.start.dateTime)
+            .toLocaleTimeString([], { hour: "numeric", hour12: true })
+            .replace(/(AM|PM)/i, (match) => match.toLowerCase())
         : item.start.date
-          ? new Date(item.start.date).toLocaleString()
-          : "No time available",
-      description: item.description || "No description available.",
+          ? new Date(item.start.date)
+              .toLocaleTimeString([], { hour: "numeric", hour12: true })
+              .replace(/(AM|PM)/i, (match) => match.toLowerCase())
+          : "N/A",
+      description: item.description || "",
     }))
     .slice(0, 3);
 };

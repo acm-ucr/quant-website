@@ -1,18 +1,11 @@
-import EventCard from "@/components/events/event";
+import Events from "@/components/events/events";
 
-const Events = () => {
+const EventsPage = () => {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center gap-10">
-      <EventCard
-        day="Mon"
-        date="09"
-        title="General Meeting"
-        location="Location"
-        time="3 pm"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan urna nec libero fringilla, ac fermentum purus tempus. Sed et nisi velit."
-      />
+    <div className="flex h-screen w-screen items-center justify-center">
+      <Events />
     </div>
   );
 };
 
-export default Events;
+export default EventsPage;

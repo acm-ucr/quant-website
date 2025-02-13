@@ -1,26 +1,30 @@
-import Image from "next/image";
-import image_src from "@/public/projects/exampleACM.svg";
+import Image, { StaticImageData } from "next/image";
 const Project = (props: {
+  image_src: StaticImageData;
   image_alt: string;
   name: string;
   description: string;
 }) => {
   return (
-    <div className="flex h-2/6 w-8/12 flex-col text-lg">
-      <div className="flex flex-row items-center justify-center gap-24 p-8 text-white">
-        <div className="flex h-1/2 w-1/6 items-center justify-center rounded-full bg-[#94C7ED]">
-          <Image className="h-20 w-20" src={image_src} alt={props.image_alt} />
+    <div className="max-w-3/4 min-h-fit rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-fit lg:flex-col lg:text-lg">
+      <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:items-center lg:justify-center lg:gap-24 lg:p-8 lg:text-white">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:flex lg:min-h-44 lg:min-w-48 lg:items-center lg:justify-center lg:rounded-full">
+          <Image
+            className="w-20 max-lg:w-10"
+            src={props.image_src}
+            alt={props.image_alt}
+          />
         </div>
-        <div className="flex flex-col">
-          <div className="p-3 font-questrial text-4xl font-bold">
+        <div className="flex flex-col justify-center max-lg:items-center">
+          <div className="p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
             {props.name}
           </div>
-          <div className="max-w-5xl p-3 font-roboto text-lg">
+          <div className="font-roboto text-sm lg:max-w-5xl lg:p-3 lg:font-roboto lg:text-lg">
             {props.description}
           </div>
         </div>
       </div>
-      <div className="w-7/8 border-2"></div>
+      <div className="lg:w-7/8 lg:border-2"></div>
     </div>
   );
 };

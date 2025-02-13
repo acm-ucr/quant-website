@@ -1,3 +1,4 @@
+import NavBar from "@/components/navigation";
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import {
@@ -55,11 +56,14 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className="bg-[#100E37]">
+    <html lang="en">
       <body
-        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable}`}
+        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} flex flex-col justify-between bg-[#100E37]`}
       >
-        <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+        <NavBar />
+        <div className="flex w-full flex-col items-center justify-center text-white">
+          <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+        </div>
         <Footer />
       </body>
     </html>

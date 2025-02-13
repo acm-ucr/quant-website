@@ -10,11 +10,10 @@ const Footer = () => {
       <div className="container mx-auto text-white">
         <div className="relative">
           <div className="h-[2px] w-full bg-white" />
-          <div className="absolute right-[-8px] top-1/2 hidden -translate-y-1/2 md:block">
+          <div className="absolute right-[-8px] top-1/2 hidden -translate-y-1/2 sm:block">
             <ChevronRight className="text-white" size={20} />
           </div>
         </div>
-
         {/* mobile layout */}
         <div className="flex flex-col items-center gap-6 pb-12 pt-4 sm:hidden">
           <Image src={footerLogo} alt="logo" className="h-16 w-16" />
@@ -46,7 +45,11 @@ const Footer = () => {
             <div className="flex gap-8">
               {FooterArray().map((item, i) => {
                 return (
-                  <Link key={i} href={item.link} className="text-white">
+                  <Link
+                    key={i}
+                    href={item.link}
+                    className="text-white transition-transform duration-300 hover:scale-125"
+                  >
                     <item.icon size={24} />
                   </Link>
                 );

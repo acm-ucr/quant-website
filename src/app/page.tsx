@@ -1,5 +1,3 @@
-import Header from "../components/header";
-import Events from "@/components/events/events";
 import Landing from "../components/home/landing";
 import Description from "@/components/home/description";
 import TechStack from "@/components/home/techstack";

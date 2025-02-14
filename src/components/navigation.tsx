@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavItems from "@/data/navigation";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface NavItems {
   name: string;
@@ -18,6 +19,7 @@ const Navigation = () => {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+  const pathname = usePathname();
   return (
     <div>
       <div
@@ -57,14 +59,14 @@ const Navigation = () => {
           <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:block lg:flex lg:gap-0">
             {NavItems.map((item, i) => {
               return (
-                <Link key={i} href={item.link} className="hover:underline">
+                <Link key={i} href={item.link} className={`hover:underline ${pathname === item.link ? "font-extrabold"
+                  : "border-0"}`}>
                   {item.name}
                 </Link>
               );
             })}
           </div>
         ) : null}
-        {/* change join link */}
         <Link
           target="_blank"
           rel="noopener noreferrer"
@@ -81,12 +83,8 @@ const Navigation = () => {
           <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
             {NavItems.map((item, i) => {
               return (
-                <Link
-                  key={i}
-                  href={item.link}
-                  onClick={toggleNav}
-                  className="hover:underline"
-                >
+                <Link key={i} href={item.link} className={`hover:underline ${pathname === item.link ? "font-extrabold"
+                  : "border-0"}`}>
                   {item.name}
                 </Link>
               );

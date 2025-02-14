@@ -27,7 +27,12 @@ const Navigation = () => {
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
               <Link href="" onClick={toggleNav}>
-                <Image src={Bar} alt="task bar" className="h-full w-full" onClick={toggleNav} />
+                <Image
+                  src={Bar}
+                  alt="task bar"
+                  className="h-full w-full"
+                  onClick={toggleNav}
+                />
               </Link>
             ) : (
               <Link href="" onClick={toggleNav}>
@@ -70,8 +75,8 @@ const Navigation = () => {
         </Link>
       </div>
       {isNavOpen ? (
-        <div className="absolute left-0 md:top-[10%] w-full z-10 flex flex-col"> 
-          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white ">
+        <div className="absolute left-0 z-10 flex w-full flex-col md:top-[10%]">
+          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
             {NavItems.map((item, i) => {
               return (
                 <Link
@@ -85,8 +90,7 @@ const Navigation = () => {
               );
             })}
           </div>
-          <div className="bg-[#100E37]/50 w-screen h-screen">
-          </div>
+          <div className="h-screen w-screen bg-[#100E37]/50"></div>
         </div>
       ) : null}
     </div>

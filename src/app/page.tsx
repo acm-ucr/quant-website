@@ -1,3 +1,4 @@
+import Landing from "../components/home/landing";
 import Description from "@/components/home/description";
 import TechStack from "@/components/home/techstack";
 import Chart from "@/public/assets/chartimage.webp";
@@ -5,7 +6,8 @@ import Analyze from "@/public/assets/Analyze.webp";
 
 const Home = () => {
   return (
-    <div className="my-4 mt-24 flex min-h-screen w-screen flex-col items-center justify-center gap-64">
+    <div className="flex w-full flex-col items-center justify-center gap-10">
+      <Landing />
       <Description
         title="What is Quant Club?"
         description="The Quantitative Analysis Club at UCR provides a structured approach to learning quantitative finance and data science. Through workshops, guest lectures, and networking events, members gain practical experience in financial modeling, statistical analysis, and machine learning applications. We serve as a platform for students to develop the technical and analytical skills required in quantitative research roles."

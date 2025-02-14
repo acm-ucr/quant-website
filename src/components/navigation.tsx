@@ -66,7 +66,9 @@ const Navigation = () => {
         ) : null}
         {/* change join link */}
         <Link
-          href={"/"}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={"https://discord.gg/bzCbpzZRtH"}
           className={
             "bg-aviatr-blue-100 ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold hover:underline min-[400px]:text-lg md:w-[10rem]"
           }

@@ -26,11 +26,11 @@ const Navigation = () => {
         <div className={`flex:row flex border-b-quant-white sm:gap-3`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
-              <Link href="/" onClick={toggleNav}>
-                <Image src={Bar} alt="task bar" className="h-full w-full" />
+              <Link href="" onClick={toggleNav}>
+                <Image src={Bar} alt="task bar" className="h-full w-full" onClick={toggleNav} />
               </Link>
             ) : (
-              <Link href="/" onClick={toggleNav}>
+              <Link href="" onClick={toggleNav}>
                 <Image
                   src={ExitBar}
                   alt="exit task bar"
@@ -70,19 +70,23 @@ const Navigation = () => {
         </Link>
       </div>
       {isNavOpen ? (
-        <div className="absolute left-0 z-10 flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white md:top-[10%]">
-          {NavItems.map((item, i) => {
-            return (
-              <Link
-                key={i}
-                href={item.link}
-                onClick={toggleNav}
-                className="hover:underline"
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+        <div className="absolute left-0 md:top-[10%] w-full z-10 flex flex-col"> 
+          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white ">
+            {NavItems.map((item, i) => {
+              return (
+                <Link
+                  key={i}
+                  href={item.link}
+                  onClick={toggleNav}
+                  className="hover:underline"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
+          <div className="bg-[#100E37]/50 w-screen h-screen">
+          </div>
         </div>
       ) : null}
     </div>

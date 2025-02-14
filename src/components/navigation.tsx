@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/public/navbar/logo.webp";
-import Bar from "@/public/navbar/task_bar.png";
-import ExitBar from "@/public/navbar/exit_task bar.png";
+import Bar from "@/public/navbar/task_bar.webp";
+import ExitBar from "@/public/navbar/webp bar.webp";
 import Image from "next/image";
 import Link from "next/link";
 import NavItems from "@/data/navigation";

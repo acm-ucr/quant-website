@@ -14,12 +14,12 @@ const Header = ({ title, variant = "arrows" }: HeaderProps) => {
     <div className="w-full py-5">
       {variant === "arrows" ? (
         <div className="hidden w-full py-5 md:flex">
-          <div className="mx-auto flex w-3/4 items-center justify-center gap-20">
+          <div className="mx-auto flex w-3/4 items-center justify-between">
             <Image
               src={leftLine}
               alt="left-line"
               aria-hidden="true"
-              className="flex h-full"
+              className="flex w-1/3"
             />
 
             <div className="text-center font-hanken text-5xl font-bold text-white">
@@ -30,7 +30,7 @@ const Header = ({ title, variant = "arrows" }: HeaderProps) => {
               src={rightLine}
               alt="right-line"
               aria-hidden="true"
-              className="flex h-full"
+              className="flex w-1/3"
             />
           </div>
         </div>

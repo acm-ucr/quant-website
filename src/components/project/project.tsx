@@ -19,7 +19,7 @@ const Project = (props: {
           <div className="p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
             {props.name}
           </div>
-          <div className="font-roboto text-sm lg:max-w-5xl lg:p-3 lg:font-roboto lg:text-lg">
+          <div className="text-center font-roboto text-sm lg:max-w-5xl lg:p-3 lg:text-left lg:font-roboto lg:text-lg">
             {props.description}
           </div>
         </div>

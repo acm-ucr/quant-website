@@ -3,10 +3,12 @@ import Description from "@/components/home/description";
 import TechStack from "@/components/home/techstack";
 import Chart from "@/public/assets/chartimage.webp";
 import Analyze from "@/public/assets/Analyze.webp";
+import Header from "../components/header";
 
 const Home = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-10">
+      <Header title="Our Tech Stack" variant="underline" />
       <Landing />
       <Description
         title="What is Quant Club?"

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { IoMdPlay } from "react-icons/io";
 import { DayPicker } from "react-day-picker";
 import { buttonVariants } from "./button";
+import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import {
@@ -75,24 +75,24 @@ function CalendarEvents({
   const eventDays = events.map((event) => event.date);
   const [popupEvent, setPopupEvent] = useState<EventProps | null>(null);
 
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [currYear, setCurrentYear] = useState(currentDate.getFullYear());
+  const [currentDate /*  setCurrentDate */] = useState(new Date());
+  const [currYear /* setCurrentYear */] = useState(currentDate.getFullYear());
 
-  const nextDate = () => {
-    const newDate = new Date(currentDate);
-    newDate.setMonth(newDate.getMonth() + 1);
+  // const nextDate = () => {
+  //   const newDate = new Date(currentDate);
+  //   newDate.setMonth(newDate.getMonth() + 1);
 
-    setCurrentDate(newDate);
-    setCurrentYear(newDate.getFullYear());
-  };
+  //   setCurrentDate(newDate);
+  //   setCurrentYear(newDate.getFullYear());
+  // };
 
-  const prevDate = () => {
-    const newDate = new Date(currentDate);
-    newDate.setMonth(newDate.getMonth() - 1);
+  // const prevDate = () => {
+  //   const newDate = new Date(currentDate);
+  //   newDate.setMonth(newDate.getMonth() - 1);
 
-    setCurrentDate(newDate);
-    setCurrentYear(newDate.getFullYear());
-  };
+  //   setCurrentDate(newDate);
+  //   setCurrentYear(newDate.getFullYear());
+  // };
 
   const toggleModal = () => {
     setPopupEvent(null);
@@ -227,22 +227,17 @@ function CalendarEvents({
           ...classNames,
         }}
         components={{
-          IconLeft: () => (
-            <IoMdPlay
-              onClick={prevDate}
-              className="h-[5px] w-[5px] text-white opacity-50 hover:opacity-0 md:h-4 md:w-8"
-            />
-          ),
-          IconRight: () => (
-            <IoMdPlay
-              onClick={nextDate}
-              className="h-[5px] w-[5px] text-white opacity-50 hover:opacity-0 md:h-4 md:w-8"
-            />
-          ),
+          Chevron: (props) => {
+            if (props.orientation === "left") {
+              return <HiArrowLongLeft {...props} />;
+            }
+            return <HiArrowLongRight {...props} />;
+          },
           Day: (props) => (
             <CustomDay
               {...props}
-              selected={props.date.getTime() === selectedDate?.getTime()}
+              date={new Date()}
+              selected={new Date().getTime() === selectedDate?.getTime()}
               onClick={setSelectedDate}
             />
           ),

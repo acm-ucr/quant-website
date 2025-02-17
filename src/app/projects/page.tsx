@@ -3,7 +3,7 @@ import projects from "@/data/project";
 
 const Projects = () => {
   return (
-    <div className="flex min-h-screen w-screen flex-col flex-wrap items-center justify-center gap-8 bg-quant-navy p-12 pb-28">
+    <div className="bg-quant-navy flex min-h-screen w-screen flex-col flex-wrap items-center justify-center gap-8 p-12 pb-28">
       <div className="flex w-full flex-col items-center justify-center lg:flex-row lg:p-20">
         <div className="lg:h-2 lg:w-2 lg:rotate-45 lg:bg-white"></div>
         <div className="lg:w-1/4 lg:border-2"> </div>

@@ -1,7 +1,11 @@
+import Header from "../../components/header";
+import Boards from "@/components/board/boards";
+
 const Board = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      This is the Board Page
+    <div className="flex flex-col items-center justify-center gap-10">
+      <Header title="OUR BOARD" />
+      <Boards />
     </div>
   );
 };

@@ -1,17 +1,17 @@
-import Image from "next/image";
-import image_src from "@/public/projects/exampleACM.svg";
+import Image, { StaticImageData } from "next/image";
 const Project = (props: {
+  image_src: StaticImageData;
   image_alt: string;
   name: string;
   description: string;
 }) => {
   return (
-    <div className="min-h-fit w-3/4 rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-9/12 lg:flex-col lg:text-lg">
+    <div className="max-w-3/4 min-h-fit rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-fit lg:flex-col lg:text-lg">
       <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:items-center lg:justify-center lg:gap-24 lg:p-8 lg:text-white">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:flex lg:min-h-44 lg:min-w-44 lg:items-center lg:justify-center lg:rounded-full">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:flex lg:min-h-44 lg:min-w-48 lg:items-center lg:justify-center lg:rounded-full">
           <Image
-            className="w-24 max-lg:w-10"
-            src={image_src}
+            className="w-20 max-lg:w-10"
+            src={props.image_src}
             alt={props.image_alt}
           />
         </div>
@@ -19,7 +19,7 @@ const Project = (props: {
           <div className="p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
             {props.name}
           </div>
-          <div className="font-roboto text-sm lg:max-w-5xl lg:p-3 lg:font-roboto lg:text-lg">
+          <div className="text-center font-roboto text-sm lg:max-w-5xl lg:p-3 lg:text-left lg:font-roboto lg:text-lg">
             {props.description}
           </div>
         </div>

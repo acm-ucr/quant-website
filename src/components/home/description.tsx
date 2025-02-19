@@ -13,7 +13,7 @@ const Description = ({ title, description, image }: DescriptionProps) => {
       <div className="mb-5 pr-10 text-center font-hanken text-xl font-bold text-white md:mb-10 md:text-left md:text-4xl">
         {title}
       </div>
-      <div className="mb-10 w-fit overflow-auto text-center font-roboto text-xs text-white md:mb-0 md:pr-12 md:text-left">
+      <div className="mb-10 w-fit overflow-auto text-center font-roboto text-xs text-white md:mb-0 md:pr-12 md:text-left md:text-xl">
         {description}
       </div>
       <div className="flex w-full flex-row justify-end">

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Header from "../../components/header";
 import Boards from "@/components/board/boards";
@@ -15,12 +15,12 @@ const Board = () => {
       <Header title="OUR BOARD" />
 
       <motion.div
-        className="w-full flex justify-center"
+        className="flex w-full justify-center"
         initial={{ opacity: 0.6, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.1,
-          scale: { type: "spring", damping: 10, stiffness: 100 }
+          scale: { type: "spring", damping: 10, stiffness: 100 },
         }}
       >
         <Boards />

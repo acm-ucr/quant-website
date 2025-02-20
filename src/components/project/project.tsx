@@ -1,9 +1,12 @@
+import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 const Project = (props: {
   image_src: StaticImageData;
   image_alt: string;
   name: string;
   description: string;
+  link: string;
 }) => {
   return (
     <div className="max-w-3/4 min-h-fit rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-fit lg:flex-col lg:text-lg">
@@ -16,8 +19,16 @@ const Project = (props: {
           />
         </div>
         <div className="flex flex-col justify-center max-lg:items-center">
-          <div className="p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
+          <div className="flex flex-row items-center gap-3 p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
             {props.name}
+            <Link
+              href={props.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform duration-300 hover:scale-125"
+            >
+              <ExternalLink />
+            </Link>
           </div>
           <div className="text-center font-roboto text-sm lg:max-w-5xl lg:p-3 lg:text-left lg:font-roboto lg:text-lg">
             {props.description}

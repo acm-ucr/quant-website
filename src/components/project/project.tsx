@@ -19,7 +19,7 @@ const Project = (props: {
           />
         </div>
         <div className="flex flex-col justify-center max-lg:items-center">
-          <div className="flex flex-row items-center gap-3 p-3 font-questrial text-lg font-bold lg:text-4xl lg:font-bold">
+          <div className="flex flex-row items-center gap-2 p-3 font-questrial text-lg font-bold lg:gap-3 lg:text-4xl lg:font-bold">
             {props.name}
             <Link
               href={props.link}
@@ -27,7 +27,7 @@ const Project = (props: {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125"
             >
-              <ExternalLink />
+              <ExternalLink className="w-4 sm:w-4 lg:w-6" />
             </Link>
           </div>
           <div className="text-center font-roboto text-sm lg:max-w-5xl lg:p-3 lg:text-left lg:font-roboto lg:text-lg">

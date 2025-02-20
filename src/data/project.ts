@@ -5,7 +5,7 @@ interface Project {
   image: StaticImageData;
   name: string;
   description: string;
-  link:string;
+  link: string;
 }
 
 const projects: Project[] = [

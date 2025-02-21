@@ -71,21 +71,21 @@ const Events = () => {
 
   if (isLoading)
     return (
-      <p className="my-10 flex items-center justify-center text-3xl text-white">
+      <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
         Loading events...
       </p>
     );
 
   if (events.length === 0)
     return (
-      <p className="my-10 flex items-center justify-center text-3xl text-white">
+      <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
         No Upcoming Events
       </p>
     );
 
   if (error)
     return (
-      <p className="my-10 flex items-center justify-center text-3xl text-white">
+      <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
         Error fetching events
       </p>
     );

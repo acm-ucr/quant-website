@@ -1,5 +1,5 @@
 import Image from "next/image";
-import locationIcon from "@/public/icons/LocationIconBlue.svg";
+import LocationIcon from "@/public/icons/LocationIconBlue.svg";
 import TimeIcon from "@/public/icons/TimeIcon.svg";
 import TimeIconMobile from "@/public/icons/TimeIconMobile.svg";
 
@@ -38,7 +38,7 @@ const EventCard = (props: {
             <div className="lg:h-2/8 mt-1 flex flex-row gap-3 sm:mt-0 sm:gap-20 lg:w-1/2 lg:pl-8">
               <div className="h-1/8 flex w-1/5 flex-row gap-2 pl-1 font-roboto text-quant-blue-100 sm:text-lg">
                 <Image
-                  src={locationIcon}
+                  src={LocationIcon}
                   alt="Location Icon"
                   width={24}
                   height={24}

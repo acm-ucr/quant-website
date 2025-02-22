@@ -91,7 +91,7 @@ const Events = () => {
     );
 
   return (
-    <div className="flex w-full flex-col text-3xl">
+    <div className="flex w-full flex-col gap-2 text-3xl sm:gap-5">
       {events.map((event, index) => (
         <div className="mb-4 flex items-center justify-center" key={index}>
           <EventCard

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LocationIcon from "@/public/icons/LocationIconBlue.svg";
-import TimeIcon from "@/public/icons/TimeIcon.svg";
+import TimeIcon from "@/public/icons/timeIcon.svg";
 import TimeIconMobile from "@/public/icons/TimeIconMobile.svg";
 
 const EventCard = (props: {

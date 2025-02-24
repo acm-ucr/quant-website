@@ -49,11 +49,7 @@ const fetchEvents = async (): Promise<EventProps[]> => {
         ? new Date(item.start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
-        : item.start.date
-          ? new Date(item.start.date)
-              .toLocaleTimeString([], { hour: "numeric", hour12: true })
-              .replace(/(AM|PM)/i, (match) => match.toLowerCase())
-          : "N/A",
+        : "All day",
       description: item.description || "",
     }))
     .slice(0, 3);

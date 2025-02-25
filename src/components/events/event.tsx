@@ -48,7 +48,7 @@ const EventCard = (props: {
                   {props.location}
                 </div>
               </div>
-              <div className="h-7/8 flex w-1/2 flex-row gap-2 pl-10 font-roboto text-sm text-quant-blue-100 sm:translate-x-12 sm:text-lg">
+              <div className="h-7/8 flex flex-row gap-2 pl-10 font-roboto text-sm text-quant-blue-100 sm:translate-x-12 sm:text-lg md:-translate-x-10 lg:-translate-x-0">
                 <Image
                   src={TimeIconMobile}
                   alt="Time Icon"

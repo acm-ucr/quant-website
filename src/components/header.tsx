@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import leftLine from "/public/header/left-line.svg";
 import rightLine from "/public/header/right-line.svg";
 import leftArrow from "/public/header/chevron-left.svg";
@@ -10,8 +12,18 @@ type HeaderProps = {
 };
 
 const Header = ({ title, variant = "arrows" }: HeaderProps) => {
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="w-full py-5">
+    <motion.div
+      className="w-full py-5"
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {variant === "arrows" ? (
         <div className="hidden w-full py-5 md:flex">
           <div className="mx-auto flex w-3/4 items-center justify-between">
@@ -21,11 +33,9 @@ const Header = ({ title, variant = "arrows" }: HeaderProps) => {
               aria-hidden="true"
               className="flex w-1/3"
             />
-
             <div className="text-center font-hanken text-5xl font-bold text-white">
               {title}
             </div>
-
             <Image
               src={rightLine}
               alt="right-line"
@@ -71,7 +81,7 @@ const Header = ({ title, variant = "arrows" }: HeaderProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

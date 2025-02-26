@@ -47,6 +47,23 @@ const Navigation = () => {
             </div>
           </Link>
         </div>
+        {!isNavOpen ? (
+          <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:block lg:flex lg:gap-0">
+            {NavItems.map((item, i) => {
+              return (
+                <Link
+                  key={i}
+                  href={item.link}
+                  className={`hover:underline ${
+                    pathname === item.link ? "font-extrabold" : "border-0"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
+        ) : null}
         <Link
           target="_blank"
           rel="noopener noreferrer"

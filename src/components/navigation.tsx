@@ -26,11 +26,7 @@ const Navigation = () => {
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
               <button onClick={() => setIsNavOpen(!isNavOpen)}>
-                <Image
-                  src={Bar}
-                  alt="task bar"
-                  className="h-full w-full"
-                />
+                <Image src={Bar} alt="task bar" className="h-full w-full" />
               </button>
             ) : (
               <button onClick={() => setIsNavOpen(!isNavOpen)}>

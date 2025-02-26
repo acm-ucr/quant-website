@@ -39,7 +39,7 @@ const Project = (props: ProjectProps) => {
               href={props.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125"
+              className="transition-transform duration-300 hover:scale-110"
             >
               <ExternalLink className="w-4 sm:w-4 lg:w-6" />
             </Link>

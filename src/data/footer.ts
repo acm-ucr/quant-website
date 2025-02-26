@@ -1,7 +1,7 @@
 import { Mail } from "lucide-react";
 import { SiInstagram, SiLinkedin } from "@icons-pack/react-simple-icons";
 
-export const FooterArray = () => [
+export default [
   {
     icon: Mail,
     link: "mailto:ucrquantclub@gmail.com",

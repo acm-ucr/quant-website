@@ -6,7 +6,7 @@ import FlaskLogo from "@/public/techstack/flask.webp";
 import OcamlLogo from "@/public/techstack/ocaml.webp";
 import NumpyLogo from "@/public/techstack/numpy.webp";
 
-const TechStack = [
+export default [
   { image: PythonLogo, link: "https://www.python.org" },
   { image: PandasLogo, link: "https://pandas.pydata.org/" },
   { image: StataLogo, link: "https://www.stata.com/" },
@@ -15,5 +15,3 @@ const TechStack = [
   { image: OcamlLogo, link: "https://ocaml.org/" },
   { image: NumpyLogo, link: "https://numpy.org" },
 ];
-
-export default TechStack;

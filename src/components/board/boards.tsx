@@ -3,7 +3,7 @@ import Members from "@/data/Board";
 
 const Boards = () => {
   return (
-    <div className="mx-5 flex flex-wrap items-center justify-center gap-6 sm:w-3/4 sm:gap-x-10">
+    <div className="mx-5 flex flex-wrap items-center justify-center gap-6 sm:gap-x-9 xl:gap-x-10">
       {Members.map((member, index) => {
         return (
           <div className="relative">

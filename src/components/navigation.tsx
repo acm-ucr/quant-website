@@ -1,17 +1,12 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Logo from "@/public/navbar/logo.webp";
 import Bar from "@/public/navbar/task_bar.webp";
 import ExitBar from "@/public/navbar/exit_bar.webp";
-import Image from "next/image";
-import Link from "next/link";
 import NavItems from "@/data/navigation";
-import React, { useState } from "react";
-import { usePathname } from "next/navigation";
-
-interface NavItems {
-  name: string;
-  link: string;
-}
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -56,7 +51,7 @@ const Navigation = () => {
           </Link>
         </div>
         {!isNavOpen ? (
-          <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:block lg:flex lg:gap-0">
+          <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:flex lg:gap-0">
             {NavItems.map((item, i) => {
               return (
                 <Link

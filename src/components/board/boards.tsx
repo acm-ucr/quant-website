@@ -1,5 +1,5 @@
 import Board from "./board";
-import Members from "@/data/Board";
+import Members from "@/data/board";
 
 const Boards = () => {
   return (

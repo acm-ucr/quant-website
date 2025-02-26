@@ -1,6 +1,5 @@
 "use client";
-
-import { Calendar /* GoogleEventProps */ } from "@/components/ui/calendar";
+import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
 import {
   Dialog,
@@ -71,7 +70,6 @@ const fetchEvents = async (): Promise<EventProps[]> => {
 
 const Events = () => {
   const [current, setCurrent] = useState<EventProps>({});
-
   const {
     data: events = [],
     error,

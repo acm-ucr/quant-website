@@ -9,7 +9,7 @@ interface DescriptionProps {
 
 const Description = ({ title, description, image }: DescriptionProps) => {
   return (
-    <div className="relative mx-10 mb-10 flex h-fit max-w-7xl flex-col px-5 sm:px-10 md:px-20">
+    <div className="relative mx-10 mb-10 flex h-fit max-w-7xl flex-col px-5 sm:px-10 md:w-full md:px-20">
       <div className="mb-5 pr-10 text-center font-hanken text-4xl font-bold text-white md:mb-10 md:text-left md:text-4xl">
         {title}
       </div>

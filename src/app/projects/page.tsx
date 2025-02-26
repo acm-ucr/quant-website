@@ -1,7 +1,7 @@
-import Project from "../../components/project/project";
-import projects from "@/data/project";
+import Header from "@/components/header";
+import Projects from "@/components/project/projects";
 
-const Projects = () => {
+const ProjectsPage = () => {
   return (
     <div className="bg-quant-navy flex min-h-screen w-screen flex-col flex-wrap items-center justify-center gap-8 p-12 pb-28">
       <div className="flex w-full flex-col items-center justify-center lg:flex-row lg:p-20">
@@ -28,4 +28,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsPage;

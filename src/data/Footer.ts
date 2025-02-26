@@ -1,25 +1,17 @@
 import { Mail } from "lucide-react";
-import {
-  SiInstagram,
-  SiLinkedin,
-  SiGithub,
-} from "@icons-pack/react-simple-icons";
+import { SiInstagram, SiLinkedin } from "@icons-pack/react-simple-icons";
 
 export const FooterArray = () => [
   {
     icon: Mail,
-    link: "#",
+    link: "mailto:ucrquantclub@gmail.com",
   },
   {
     icon: SiInstagram,
-    link: "#",
+    link: "https://www.instagram.com/quantclubucr/",
   },
   {
     icon: SiLinkedin,
-    link: "#",
-  },
-  {
-    icon: SiGithub,
-    link: "#",
+    link: "https://www.linkedin.com/company/quantitative-analysis-club-at-ucr/",
   },
 ];

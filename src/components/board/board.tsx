@@ -1,6 +1,10 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const Board = (props: { image: string; name: string; position: string }) => {
+const Board = (props: {
+  image: StaticImageData;
+  name: string;
+  position: string;
+}) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="relative flex -translate-x-1 items-center justify-center sm:-translate-x-0">

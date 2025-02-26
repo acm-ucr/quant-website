@@ -48,6 +48,7 @@ const Footer = () => {
                   <Link
                     key={i}
                     href={item.link}
+                    target="_blank"
                     className="text-white transition-transform duration-300 hover:scale-125"
                   >
                     <item.icon size={24} />

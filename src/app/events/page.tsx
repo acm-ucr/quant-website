@@ -1,85 +1,90 @@
 "use client";
-import EventCard from "@/components/events/event";
-import { Calendar } from "@/components/ui/calendar";
-import { EventProps } from "@/components/ui/calendar";
-import { useEffect, useState } from "react";
 
-interface GoogleCalendarEvents {
-  start: {
-    dateTime?: string;
-    date?: string;
-  };
-  summary: string;
-  location?: string;
-  description?: string;
-}
+import {
+  Calendar,
+  EventProps,
+  GoogleEventProps,
+} from "@/components/ui/calendar";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Events = () => {
-  const [events, setEvents] = useState<EventProps[]>([]);
+  const [current, setCurrent] = useState<EventProps>({});
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
-      const calendarId = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL;
+  const { data } = useQuery({
+    queryKey: ["repoData"],
+    queryFn: async () => {
+      const response =
+        await fetch(`https://www.googleapis.com/calendar/v3/calendars/${
+          process.env.NEXT_PUBLIC_GOOGLE_CALENDAR
+        }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}
+          &singleEvents=true&orderBy=startTime&timeMin=${new Date(
+            new Date().getTime() - 60 * 60 * 24 * 7 * 10 * 1000,
+          ).toISOString()}&timeMax=${new Date(
+            new Date().getTime() + 60 * 60 * 24 * 7 * 10 * 1000,
+          ).toISOString()}`).then((res) => res.json());
 
-      if (!apiKey || !calendarId) {
-        console.error("API Key or Calendar ID is missing.");
-        return;
-      }
+      const events = response.items.map(
+        ({ start, end, location, description, summary }: GoogleEventProps) => ({
+          start: start.dateTime,
+          end: end.dateTime,
+          location,
+          description,
+          title: summary,
+        }),
+      );
 
-      const today = new Date();
-      const timeMin = new Date(today);
-      timeMin.setMonth(today.getMonth() - 2);
-      const timeMinISO = timeMin.toISOString();
-      const timeMax = new Date(today);
-      timeMax.setMonth(today.getMonth() + 2);
-      const timeMaxISO = timeMax.toISOString();
+      return events;
+    },
+  });
 
-      const url = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${encodeURIComponent(
-        timeMinISO,
-      )}&timeMax=${encodeURIComponent(timeMaxISO)}`;
-
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        const formattedEvents: EventProps[] = data.items.map(
-          (event: GoogleCalendarEvents) => ({
-            date: new Date(event.start.dateTime || event.start.date || ""),
-            title: event.summary || "No Title",
-            startTime: event.start.dateTime || event.start.date || "",
-            location: event.location || "N/A",
-            description: event.description || "N/A",
-          }),
-        );
-
-        setEvents(formattedEvents);
-      } catch (error) {
-        console.error("Error fetching events from Google Calendar:", error);
-      }
-    };
-
-    fetchEvents();
-  }, []);
   return (
-    <div className="flex min-h-screen w-full items-center justify-center gap-10">
-      <EventCard
-        day="Mon"
-        date="09"
-        title="General Meeting"
-        location="Location"
-        time="3 pm"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan urna nec libero fringilla, ac fermentum purus tempus. Sed et nisi velit."
+    <>
+      {
+        <Dialog
+          open={Object.keys(current).length > 0}
+          onOpenChange={() => setCurrent({})}
+        >
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                <p className="text-xl">{current.title}</p>
+                <p className="font-questrial text-base">
+                  {current.location} from{" "}
+                  {new Date(current.start as string).toLocaleTimeString(
+                    "en-US",
+                    {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    },
+                  )}{" "}
+                  to{" "}
+                  {new Date(current.end as string).toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+              </DialogTitle>
+              <DialogDescription>{current.description}</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      }
+      <Calendar
+        mode="single"
+        selected={new Date()}
+        className="w-full rounded-md border"
+        events={data}
+        setCurrent={setCurrent}
       />
-      {/* <Events /> */}
-      <div>
-        <Calendar events={events} />
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -17,9 +17,6 @@ interface GoogleCalendarEvents {
 }
 
 const Events = () => {
-  const containerRef = useRef(null);
-  const isContainerInView = useInView(containerRef, { once: true });
-
   const [events, setEvents] = useState<EventProps[]>([]);
 
   useEffect(() => {
@@ -81,16 +78,7 @@ const Events = () => {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan urna nec libero fringilla, ac fermentum purus tempus. Sed et nisi velit."
       />
       {/* <Events /> */}
-      <div ref={containerRef}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={
-            isContainerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-          }
-          transition={{ duration: 1 }}
-        >
           <Calendar events={events} />
-        </motion.div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import EventCard from "@/components/events/event";
 import { Calendar } from "@/components/ui/calendar";
 import { EventProps } from "@/components/ui/calendar";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 interface GoogleCalendarEvents {
   start: {
@@ -77,7 +77,7 @@ const Events = () => {
       />
       {/* <Events /> */}
       <div>
-          <Calendar events={events} />
+        <Calendar events={events} />
       </div>
     </div>
   );

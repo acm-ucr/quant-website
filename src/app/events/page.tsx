@@ -1,10 +1,8 @@
 "use client";
 import EventCard from "@/components/events/event";
-import Calendar from "@/components/events/calendar/Calendar";
+import { Calendar } from "@/components/ui/calendar";
 import { EventProps } from "@/components/ui/calendar";
 import { useEffect, useState, useRef } from "react";
-import { motion } from "motion/react";
-import { useInView } from "framer-motion";
 
 interface GoogleCalendarEvents {
   start: {
@@ -78,6 +76,7 @@ const Events = () => {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan urna nec libero fringilla, ac fermentum purus tempus. Sed et nisi velit."
       />
       {/* <Events /> */}
+      <div>
           <Calendar events={events} />
       </div>
     </div>

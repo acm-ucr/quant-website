@@ -1,15 +1,24 @@
 "use client";
+import { Calendar } from "@/components/ui/calendar";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useQuery } from "@tanstack/react-query";
-import EventCard from "./event";
+// import EventCard from "./event";
 
-type EventProps = {
+type EventProps = Partial<{
   day: string;
   date: string;
   title: string;
   location: string;
   time: string;
   description: string;
-};
+}>;
 
 type ApiEvent = {
   summary?: string;
@@ -49,13 +58,18 @@ const fetchEvents = async (): Promise<EventProps[]> => {
         ? new Date(item.start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
-        : "All day",
+        : item.start.date
+          ? new Date(item.start.date)
+              .toLocaleTimeString([], { hour: "numeric", hour12: true })
+              .replace(/(AM|PM)/i, (match) => match.toLowerCase())
+          : "N/A",
       description: item.description || "",
     }))
     .slice(0, 3);
 };
 
 const Events = () => {
+  const [current, setCurrent] = useState<EventProps>({});
   const {
     data: events = [],
     error,
@@ -87,22 +101,41 @@ const Events = () => {
     );
 
   return (
-    <div className="flex w-full flex-col gap-2 text-3xl sm:gap-5">
-      {events.map((event, index) => (
-        <div className="mb-4 flex items-center justify-center" key={index}>
-          <EventCard
-            day={new Date(event.date).toLocaleString("en-US", {
-              weekday: "short",
-            })}
-            date={new Date(event.date).getDate().toString().padStart(2, "0")}
-            title={event.title}
-            location={event.location}
-            time={event.time}
-            description={event.description}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      {
+        <Dialog
+          open={Object.keys(current).length > 0}
+          onOpenChange={() => setCurrent({})}
+        >
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                <p className="text-xl">{current.title}</p>
+                <p className="text-base font-normal">
+                  {current.location} from{" "}
+                  {new Date(current.date as string).toLocaleTimeString(
+                    "en-US",
+                    {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    },
+                  )}{" "}
+                  to{" "}
+                </p>
+              </DialogTitle>
+              <DialogDescription>{current.description}</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      }
+      <Calendar
+        mode="single"
+        selected={new Date()}
+        className="w-full rounded-md border"
+        events={[]}
+        setCurrent={setCurrent}
+      />
+    </>
   );
 };
 

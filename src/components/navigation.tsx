@@ -91,6 +91,7 @@ const Navigation = () => {
                 <Link
                   key={i}
                   href={item.link}
+                  onClick={toggleNav}
                   className={`hover:underline ${
                     pathname === item.link ? "font-extrabold" : "border-0"
                   }`}

@@ -10,12 +10,12 @@ const Board = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-col items-center justify-center gap-10"
+      className="flex flex-col items-center justify-center gap-2 sm:gap-10"
     >
       <Header title="OUR BOARD" />
 
       <motion.div
-        className="flex w-full justify-center"
+        className="flex w-full justify-center mb-20"
         initial={{ opacity: 0.6, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{

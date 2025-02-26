@@ -16,9 +16,6 @@ interface NavItems {
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
   const pathname = usePathname();
   return (
     <div>
@@ -28,25 +25,24 @@ const Navigation = () => {
         <div className={`flex:row flex border-b-quant-white sm:gap-3`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
-              <Link href="" onClick={toggleNav}>
+              <button onClick={() => setIsNavOpen(!isNavOpen)}>
                 <Image
                   src={Bar}
                   alt="task bar"
                   className="h-full w-full"
-                  onClick={toggleNav}
                 />
-              </Link>
+              </button>
             ) : (
-              <Link href="" onClick={toggleNav}>
+              <button onClick={() => setIsNavOpen(!isNavOpen)}>
                 <Image
                   src={ExitBar}
                   alt="exit task bar"
                   className="h-full w-full"
                 />
-              </Link>
+              </button>
             )}
           </div>
-          <Link href={"/"}>
+          <Link href="/">
             <div className="flex w-[12.5rem] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[#100F48]">
               <Image src={Logo} alt="Logo" className="w-[35%]" />
               <div className="flex items-center pl-2 font-istok-web text-xl font-bold text-white">
@@ -91,7 +87,7 @@ const Navigation = () => {
                 <Link
                   key={i}
                   href={item.link}
-                  onClick={toggleNav}
+                  onClick={() => setIsNavOpen(!isNavOpen)}
                   className={`hover:underline ${
                     pathname === item.link ? "font-extrabold" : "border-0"
                   }`}

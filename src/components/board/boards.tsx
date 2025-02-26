@@ -3,10 +3,10 @@ import Members from "@/data/Board";
 
 const Boards = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6 sm:w-3/4 sm:gap-x-20">
+    <div className="flex flex-wrap items-center justify-center gap-6 mx-5 sm:w-3/4 sm:gap-x-10">
       {Members.map((member, index) => {
         return (
-          <div className="relative md:basis-1/3 lg:basis-1/4 xl:basis-1/6">
+          <div className="relative">
             <Board
               image={member.image}
               name={member.name}

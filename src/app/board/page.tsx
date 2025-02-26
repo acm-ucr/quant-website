@@ -15,7 +15,7 @@ const Board = () => {
       <Header title="OUR BOARD" />
 
       <motion.div
-        className="flex w-full justify-center mb-20"
+        className="mb-20 flex w-full justify-center"
         initial={{ opacity: 0.6, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{

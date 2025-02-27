@@ -36,21 +36,21 @@ const fetchEvents = async (): Promise<EventProps[]> => {
   const data = await response.json();
 
   return (data.items || [])
-    .map((item: ApiEvent) => ({
+    .map(({ summary, description, location, start }: ApiEvent) => ({
       day: new Date(
-        item.start.dateTime || item.start.date || new Date(),
+        start.dateTime || start.date || new Date(),
       ).toLocaleDateString(),
       date: new Date(
-        item.start.dateTime || item.start.date || new Date(),
+        start.dateTime || start.date || new Date(),
       ).toLocaleDateString(),
-      title: item.summary || "Unnamed Event",
-      location: item.location || "N/A",
-      time: item.start.dateTime
-        ? new Date(item.start.dateTime)
+      title: summary || "Unnamed Event",
+      location: location || "N/A",
+      time: start.dateTime
+        ? new Date(start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
         : "All day",
-      description: item.description || "",
+      description: description || "",
     }))
     .slice(0, 3);
 };
@@ -88,17 +88,17 @@ const Events = () => {
 
   return (
     <div className="flex w-full flex-col gap-2 text-3xl sm:gap-5">
-      {events.map((event, index) => (
+      {events.map(({ date, title, location, time, description }, index) => (
         <div className="mb-4 flex items-center justify-center" key={index}>
           <EventCard
-            day={new Date(event.date).toLocaleString("en-US", {
+            day={new Date(date).toLocaleString("en-US", {
               weekday: "short",
             })}
-            date={new Date(event.date).getDate().toString().padStart(2, "0")}
-            title={event.title}
-            location={event.location}
-            time={event.time}
-            description={event.description}
+            date={new Date(date).getDate().toString().padStart(2, "0")}
+            title={title}
+            location={location}
+            time={time}
+            description={description}
           />
         </div>
       ))}

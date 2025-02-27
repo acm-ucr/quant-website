@@ -1,5 +1,5 @@
 import ExampleImage from "@/public/board/PersonImage.svg";
-const Members = [
+export default [
   {
     image: ExampleImage,
     name: "FirstName LastName",
@@ -41,5 +41,3 @@ const Members = [
     position: "Position",
   },
 ];
-
-export default Members;

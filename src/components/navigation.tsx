@@ -1,17 +1,12 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Logo from "@/public/navbar/logo.webp";
 import Bar from "@/public/navbar/task_bar.webp";
 import ExitBar from "@/public/navbar/exit_bar.webp";
-import Image from "next/image";
-import Link from "next/link";
 import NavItems from "@/data/navigation";
-import React, { useState } from "react";
-import { usePathname } from "next/navigation";
-
-interface NavItems {
-  name: string;
-  link: string;
-}
 
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -48,17 +43,17 @@ const Navigation = () => {
           </Link>
         </div>
         {!isNavOpen ? (
-          <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:block lg:flex lg:gap-0">
-            {NavItems.map((item, i) => {
+          <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:flex lg:gap-0">
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
+                  href={link}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}
@@ -69,26 +64,29 @@ const Navigation = () => {
           rel="noopener noreferrer"
           href={"https://discord.gg/bzCbpzZRtH"}
           className={
-            "ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold hover:underline min-[400px]:text-lg md:w-[10rem]"
+            "group relative ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold duration-200 hover:scale-105 hover:border-blue-300 hover:bg-white hover:text-quant-navy min-[400px]:text-lg sm:text-xl md:w-[10rem] md:text-2xl"
           }
         >
-          JOIN US
+          <span className="group relative">
+            JOIN US
+            <span className="absolute bottom-[0.1em] left-0 h-[0.1em] w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
+          </span>
         </Link>
       </div>
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col">
           <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
-            {NavItems.map((item, i) => {
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
+                  href={link}
                   onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}

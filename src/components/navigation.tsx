@@ -72,10 +72,13 @@ const Navigation = () => {
           rel="noopener noreferrer"
           href={"https://discord.gg/bzCbpzZRtH"}
           className={
-            "ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold hover:underline min-[400px]:text-lg md:w-[10rem]"
+            "group relative ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold duration-200 hover:scale-105 hover:border-blue-300 hover:bg-white hover:text-quant-navy min-[400px]:text-lg sm:text-xl md:w-[10rem] md:text-2xl"
           }
         >
-          JOIN US
+          <span className="group relative">
+            JOIN US
+            <span className="absolute bottom-[0.1em] left-0 h-[0.1em] w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
+          </span>
         </Link>
       </div>
       {isNavOpen ? (

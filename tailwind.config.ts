@@ -12,9 +12,13 @@ module.exports = {
         hanken: ["var(--hanken-grotesk-font)"],
         "istok-web": ["var(--istok-web-font)"],
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
       colors: {
-        quant: {
-          white: "#FFFFFF",
+        white: "#FFFFFF",
           navy: "#0F0E37",
           gray: "#C3D0DF",
           skyblue: "#ADC0EB",
@@ -22,14 +26,6 @@ module.exports = {
           "blue-200": "#94C7ED",
           "gray-100": "#CAE7FF69",
           "blue-300": "#87C3F2",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

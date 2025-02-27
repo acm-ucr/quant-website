@@ -20,7 +20,7 @@ const Board = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.1,
-          scale: { type: "spring", damping: 10, stiffness: 100 },
+          scale: { damping: 10, stiffness: 100 },
         }}
       >
         <Boards />

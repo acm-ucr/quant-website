@@ -12,7 +12,7 @@ const Board = () => {
       transition={{ duration: 0.3 }}
       className="flex flex-col items-center justify-center gap-2 sm:gap-10"
     >
-      <Header title="OUR BOARD" />
+      <Header>OUR BOARD</Header>
 
       <motion.div
         className="mb-20 flex w-full justify-center"

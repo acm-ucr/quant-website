@@ -25,11 +25,11 @@ const Navigation = () => {
         <div className={`flex:row flex border-b-quant-white sm:gap-3`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
-              <button onClick={() => setIsNavOpen(isNavOpen => !isNavOpen)}>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
                 <Image src={Bar} alt="task bar" className="h-full w-full" />
               </button>
             ) : (
-              <button onClick={() => setIsNavOpen(isNavOpen => !isNavOpen)}>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
                 <Image
                   src={ExitBar}
                   alt="exit task bar"
@@ -83,7 +83,7 @@ const Navigation = () => {
                 <Link
                   key={i}
                   href={item.link}
-                  onClick={() => setIsNavOpen(isNavOpen => !isNavOpen)}
+                  onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
                   className={`hover:underline ${
                     pathname === item.link ? "font-extrabold" : "border-0"
                   }`}

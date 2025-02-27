@@ -25,7 +25,7 @@ const Navigation = () => {
       <div
         className={`mx-5 my-5 flex h-20 items-center justify-between sm:px-12 ${isNavOpen ? "border-b-2" : "border-b-0"}`}
       >
-        <div className={`flex:row flex border-b-quant-white sm:gap-3`}>
+        <div className={`flex:row border-b-quant-white flex sm:gap-3`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
               <Link href="" onClick={toggleNav}>
@@ -85,7 +85,7 @@ const Navigation = () => {
       </div>
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col md:top-[10%]">
-          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
+          <div className="border-b-quant-white flex w-full flex-col gap-10 border-b-2 bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
             {NavItems.map((item, i) => {
               return (
                 <Link

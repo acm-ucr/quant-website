@@ -1,5 +1,7 @@
 import Header from "@/components/header";
 import Projects from "@/components/project/projects";
+// import Project from "@/components/project/project";
+// import projects from "@/data/project";
 
 const ProjectsPage = () => {
   return (
@@ -9,21 +11,23 @@ const ProjectsPage = () => {
         <div className="lg:w-1/4 lg:border-2"> </div>
         <div className="items-center text-center font-hanken text-2xl font-bold text-white lg:w-3/12 lg:text-5xl">
           {" "}
-          PROJECTS{" "}
+          <Header title="PROJECTS" />{" "}
         </div>
         <div className="w-[30%] border-2 lg:w-1/4"></div>
         <div className="lg:h-2 lg:w-2 lg:rotate-45 lg:bg-white"></div>
       </div>
-      {projects.map((project, i) => (
+      <Projects
+      // image_src={project.image}
+      // image_alt="Project Image"
+      // name={project.name}
+      // description={project.description}
+      // {...Project}
+      />
+      {/* {projects.map((Project, i) => (
         <div key={i} className="p-5 lg:h-2/6 lg:max-w-[75%]">
-          <Project
-            image_src={project.image}
-            image_alt="Project Image"
-            name={project.name}
-            description={project.description}
-          />
+          
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

@@ -13,6 +13,7 @@ interface ProjectProps {
 }
 
 const Project = (props: ProjectProps) => {
+  // eslint-disable-next-line
   const projectVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (delay: number = 0) => ({
@@ -50,7 +51,7 @@ const Project = (props: ProjectProps) => {
         </div>
       </div>
       <div className="lg:w-7/8 lg:border-2"></div>
-    </motion.div>
+    </div>
   );
 };
 

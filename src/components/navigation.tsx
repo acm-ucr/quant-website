@@ -52,16 +52,16 @@ const Navigation = () => {
         </div>
         {!isNavOpen ? (
           <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:flex lg:gap-0">
-            {NavItems.map((item, i) => {
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
+                  href={link}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}
@@ -81,17 +81,17 @@ const Navigation = () => {
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col md:top-[10%]">
           <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
-            {NavItems.map((item, i) => {
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
+                  href={link}
                   onClick={toggleNav}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}

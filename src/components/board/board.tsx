@@ -1,14 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 
-const Board = ({
-  image,
-  name,
-  position,
-}: {
+type BoardProps = {
   image: StaticImageData;
   name: string;
   position: string;
-}) => {
+};
+const Board = ({ image, name, position }: BoardProps) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="relative flex -translate-x-1 items-center justify-center sm:-translate-x-0">

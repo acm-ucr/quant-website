@@ -3,6 +3,14 @@ import LocationIcon from "@/public/icons/LocationIconBlue.svg";
 import TimeIcon from "@/public/icons/timeIcon.svg";
 import TimeIconMobile from "@/public/icons/TimeIconMobile.svg";
 
+type EventCardProps = {
+  day: string;
+  date: string;
+  title: string;
+  location: string;
+  time: string;
+  description: string;
+};
 const EventCard = ({
   day,
   date,
@@ -10,14 +18,7 @@ const EventCard = ({
   location,
   time,
   description,
-}: {
-  day: string;
-  date: string;
-  title: string;
-  location: string;
-  time: string;
-  description: string;
-}) => {
+}: EventCardProps) => {
   return (
     <div className="flex w-11/12 items-center gap-6 rounded-3xl bg-[#FFFFFF61] p-4 sm:h-1/3 sm:w-4/5 sm:pb-12 lg:h-1/3 lg:w-3/4">
       <div className="mb-20 hidden sm:mb-0 sm:flex sm:h-full sm:w-4/5 sm:flex-col sm:items-center sm:justify-start sm:pt-7 lg:h-full lg:w-1/5 lg:items-center lg:justify-center lg:pt-3">

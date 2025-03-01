@@ -11,9 +11,6 @@ import NavItems from "@/data/navigation";
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
   const pathname = usePathname();
   return (
     <div>
@@ -23,25 +20,20 @@ const Navigation = () => {
         <div className={`flex:row flex border-b-quant-white sm:gap-3`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
-              <Link href="" onClick={toggleNav}>
-                <Image
-                  src={Bar}
-                  alt="task bar"
-                  className="h-full w-full"
-                  onClick={toggleNav}
-                />
-              </Link>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
+                <Image src={Bar} alt="task bar" className="h-full w-full" />
+              </button>
             ) : (
-              <Link href="" onClick={toggleNav}>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
                 <Image
                   src={ExitBar}
                   alt="exit task bar"
                   className="h-full w-full"
                 />
-              </Link>
+              </button>
             )}
           </div>
-          <Link href={"/"}>
+          <Link href="/">
             <div className="flex w-[12.5rem] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[#100F48]">
               <Image src={Logo} alt="Logo" className="w-[35%]" />
               <div className="flex items-center pl-2 font-istok-web text-xl font-bold text-white">
@@ -82,14 +74,14 @@ const Navigation = () => {
         </Link>
       </div>
       {isNavOpen ? (
-        <div className="absolute left-0 z-10 flex w-full flex-col md:top-[10%]">
+        <div className="absolute left-0 z-10 flex w-full flex-col">
           <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
             {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
                   href={link}
-                  onClick={toggleNav}
+                  onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
                   className={`hover:underline ${
                     pathname === link ? "font-extrabold" : "border-0"
                   }`}

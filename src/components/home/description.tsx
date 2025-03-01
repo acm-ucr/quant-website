@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
-interface DescriptionProps {
+type DescriptionProps = {
   title: string;
   description: string;
   image: StaticImageData;
-}
+};
 
 const Description = ({ title, description, image }: DescriptionProps) => {
   return (

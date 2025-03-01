@@ -1,18 +1,13 @@
 import Board from "./board";
-import Members from "@/data/Board";
+import Members from "@/data/board";
 
 const Boards = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6 sm:w-3/4 sm:gap-x-20">
-      {Members.map((member, index) => {
+    <div className="mx-5 flex flex-wrap items-center justify-center gap-6 sm:gap-9 xl:w-3/4 xl:gap-10">
+      {Members.map(({ image, name, position }, index) => {
         return (
-          <div className="sm:p-6">
-            <Board
-              image={member.image}
-              name={member.name}
-              position={member.position}
-              key={index}
-            />
+          <div className="relative">
+            <Board image={image} name={name} position={position} key={index} />
           </div>
         );
       })}

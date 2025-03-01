@@ -1,4 +1,4 @@
-import { FooterArray } from "@/data/Footer";
+import FooterArray from "@/data/footer";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -18,10 +18,10 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6 pb-12 pt-4 sm:hidden">
           <Image src={footerLogo} alt="logo" className="h-16 w-16" />
           <div className="flex gap-5">
-            {FooterArray().map((item, i) => {
+            {FooterArray.map(({ icon: Icon, link }, i) => {
               return (
-                <Link key={i} href={item.link} className="text-white">
-                  <item.icon size={24} />
+                <Link key={i} href={link} className="text-white">
+                  <Icon size={24} />
                 </Link>
               );
             })}
@@ -43,14 +43,15 @@ const Footer = () => {
               <p>Contact Us</p>
             </div>
             <div className="flex gap-8">
-              {FooterArray().map((item, i) => {
+              {FooterArray.map(({ icon: Icon, link }, i) => {
                 return (
                   <Link
                     key={i}
-                    href={item.link}
+                    href={link}
+                    target="_blank"
                     className="text-white transition-transform duration-300 hover:scale-125"
                   >
-                    <item.icon size={24} />
+                    <Icon size={24} />
                   </Link>
                 );
               })}

@@ -13,10 +13,8 @@ const NotFound = () => {
           </div>
           <div className="w-2/3 border-b-4 border-[#5BC6ED]"></div>
         </div>
-        <div>
-          <div className="font-questrial text-3xl font-bold leading-none text-quant-white">
-            PAGE NOT FOUND
-          </div>
+        <div className="font-questrial text-3xl font-bold leading-none text-quant-white">
+          PAGE NOT FOUND
         </div>
         <div className="p-9">
           <Link

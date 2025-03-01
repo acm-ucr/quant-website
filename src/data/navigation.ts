@@ -1,4 +1,4 @@
-export const items = [
+export default [
   {
     name: "EVENTS",
     link: "/events",
@@ -12,5 +12,3 @@ export const items = [
     link: "/board",
   },
 ];
-
-export default items;

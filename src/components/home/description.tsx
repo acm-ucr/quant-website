@@ -37,7 +37,7 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         {title}
       </motion.div>
       <motion.div
-        className="mb-10 w-fit overflow-auto text-center font-roboto text-lg text-white md:mb-0 md:pr-12 md:text-left"
+        className="mb-10 w-fit overflow-auto text-center font-roboto text-xs text-white md:mb-0 md:pr-12 md:text-left md:text-xl"
         variants={animationUp}
         transition={{ duration: 0.7, delay: 0.2 }}
         initial="hidden"

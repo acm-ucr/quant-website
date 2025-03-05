@@ -17,7 +17,7 @@ const Navigation = () => {
       <div
         className={`mx-5 my-5 flex h-20 items-center justify-between sm:px-12 ${isNavOpen ? "border-b-2" : "border-b-0"} `}
       >
-        <div className={`flex:row flex border-b-quant-white gap-2 pr-8`}>
+        <div className={`flex:row flex gap-2 border-b-quant-white pr-8`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
               <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
@@ -35,11 +35,11 @@ const Navigation = () => {
           </div>
           <Link href="/">
             <div
-              className="flex md:w-[12.5rem] w-[5] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[rgb(16,15,72)]"
+              className="flex w-[5] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[rgb(16,15,72)] md:w-[12.5rem]"
               onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
             >
-              <Image src={Logo} alt="Logo" className="md:w-[35%] w-[30%]" />
-              <div className="flex items-center pl-2 font-istok-web font-bold text-white md:text-xl text-md pr-3">
+              <Image src={Logo} alt="Logo" className="w-[30%] md:w-[35%]" />
+              <div className="text-md flex items-center pl-2 pr-3 font-istok-web font-bold text-white md:text-xl">
                 Quant Club at UCR
               </div>
             </div>

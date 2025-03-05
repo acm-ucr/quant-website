@@ -28,6 +28,7 @@ const TechStack = () => {
         variants={animationShow}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
       >
         Our Tech Stack
       </motion.div>
@@ -40,6 +41,7 @@ const TechStack = () => {
             variants={techStackAnimation}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
           >
             <Link
               key={index}

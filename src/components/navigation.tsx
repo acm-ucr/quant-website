@@ -34,7 +34,10 @@ const Navigation = () => {
             )}
           </div>
           <Link href="/">
-            <div className="flex w-[12.5rem] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[#100F48]">
+            <div
+              className="flex w-[12.5rem] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[#100F48]"
+              onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
+            >
               <Image src={Logo} alt="Logo" className="w-[35%]" />
               <div className="flex items-center pl-2 font-istok-web text-xl font-bold text-white">
                 Quant Club at UCR

@@ -33,6 +33,7 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         transition={{ duration: 0.7, delay: 0.2 }}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
       >
         {title}
       </motion.div>
@@ -42,6 +43,7 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         transition={{ duration: 0.7, delay: 0.2 }}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
       >
         {description}
       </motion.div>

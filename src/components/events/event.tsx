@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import LocationIcon from "@/public/icons/LocationIconBlue.svg";
 import TimeIcon from "@/public/icons/timeIcon.svg";

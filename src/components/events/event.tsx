@@ -2,6 +2,7 @@ import Image from "next/image";
 import LocationIcon from "@/public/icons/LocationIconBlue.svg";
 import TimeIcon from "@/public/icons/timeIcon.svg";
 import TimeIconMobile from "@/public/icons/TimeIconMobile.svg";
+import { motion } from "framer-motion";
 
 type EventCardProps = {
   day: string;
@@ -11,6 +12,18 @@ type EventCardProps = {
   time: string;
   description: string;
 };
+
+const eventCardAnimation = {
+  hidden: { opacity: 0, y: 20, scale: 0.65, rotate: -1 }, // Slightly smaller & lower initially
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
 const EventCard = ({
   day,
   date,
@@ -20,7 +33,17 @@ const EventCard = ({
   description,
 }: EventCardProps) => {
   return (
-    <div className="flex w-11/12 items-center gap-6 rounded-3xl bg-[#FFFFFF61] p-4 sm:h-1/3 sm:w-4/5 sm:pb-12 lg:h-1/3 lg:w-3/4">
+    <motion.div
+      className="flex w-11/12 items-center gap-6 rounded-3xl bg-[#FFFFFF61] p-4 sm:h-1/3 sm:w-4/5 sm:pb-12 lg:h-1/3 lg:w-3/4"
+      variants={eventCardAnimation}
+      initial="hidden"
+      whileInView="show"
+      whileHover={{
+        y: [-3, 0, -3], // Floating effect
+        transition: { duration: 1.5, repeat: Infinity, repeatType: "reverse" },
+      }}
+      viewport={{ once: false, amount: 0.4 }}
+    >
       <div className="mb-20 hidden sm:mb-0 sm:flex sm:h-full sm:w-4/5 sm:flex-col sm:items-center sm:justify-start sm:pt-7 lg:h-full lg:w-1/5 lg:items-center lg:justify-center lg:pt-3">
         <div className="text-center font-questrial text-base uppercase text-[#DDF0FE] sm:text-left sm:text-2xl sm:text-quant-blue-100 lg:text-center lg:text-xl">
           {day}
@@ -85,7 +108,7 @@ const EventCard = ({
           {description}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

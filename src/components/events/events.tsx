@@ -1,6 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import EventCard from "./event";
+import { motion } from "framer-motion";
 
 type EventProps = {
   day: string;
@@ -55,6 +56,16 @@ const fetchEvents = async (): Promise<EventProps[]> => {
     .slice(0, 3);
 };
 
+const eventsVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5, // Stagger effect for each event card appearing
+    },
+  },
+};
+
 const Events = () => {
   const {
     data: events = [],
@@ -87,9 +98,18 @@ const Events = () => {
     );
 
   return (
-    <div className="flex w-full flex-col gap-2 text-3xl sm:gap-5">
+    <motion.div
+      className="flex w-full flex-col gap-2 text-3xl sm:gap-5"
+      variants={eventsVariant}
+      initial="hidden"
+      whileInView="show"
+    >
       {events.map(({ date, title, location, time, description }, index) => (
-        <div className="mb-4 flex items-center justify-center" key={index}>
+        <motion.div
+          className="mb-4 flex items-center justify-center"
+          key={index}
+          variants={eventsVariant}
+        >
           <EventCard
             day={new Date(date).toLocaleString("en-US", {
               weekday: "short",
@@ -100,9 +120,9 @@ const Events = () => {
             time={time}
             description={description}
           />
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -14,7 +14,7 @@ type EventCardProps = {
 };
 
 const eventCardAnimation = {
-  hidden: { opacity: 0, y: 20, scale: 0.65, rotate: -1 }, // Slightly smaller & lower initially
+  hidden: { opacity: 0, y: 20, scale: 0.65, rotate: -1 },
   show: {
     opacity: 1,
     y: 0,
@@ -39,7 +39,7 @@ const EventCard = ({
       initial="hidden"
       whileInView="show"
       whileHover={{
-        y: [-3, 0, -3], // Floating effect
+        y: [-3, 0, -3],
         transition: { duration: 1.5, repeat: Infinity, repeatType: "reverse" },
       }}
       viewport={{ once: false, amount: 0.4 }}

@@ -61,7 +61,7 @@ const eventsVariant = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5, // Stagger effect for each event card appearing
+      staggerChildren: 0.5,
     },
   },
 };

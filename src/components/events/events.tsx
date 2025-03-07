@@ -29,7 +29,6 @@ const fetchEvents = async (): Promise<EventProps[]> => {
     }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}
         &singleEvents=true&orderBy=startTime&timeMin=${new Date().toISOString()}`,
   );
-
   if (!response.ok) {
     throw new Error("Error fetching events");
   }
@@ -119,6 +118,7 @@ const Events = () => {
             location={location}
             time={time}
             description={description}
+            isInitiallyExpanded={index === 0}
           />
         </motion.div>
       ))}

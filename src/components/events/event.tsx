@@ -52,7 +52,7 @@ const EventCard = ({
                 {title}
               </div>
               <button
-                onClick={() => setIsExpanded(!isExpanded)}
+                onClick={() => setIsExpanded((prev) => !prev)}
                 className="rounded-full p-2 text-quant-blue-100 transition hover:bg-white/20 sm:hidden"
               >
                 {isExpanded ? <Minus size={20} /> : <Plus size={20} />}

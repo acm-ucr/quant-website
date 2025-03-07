@@ -62,8 +62,9 @@ export default function RootLayout({ children }: LayoutProps) {
       >
         <div className="pointer-events-none absolute inset-0 -z-50 mt-[-200px] select-none overflow-hidden opacity-70">
           <svg
-            width="1440"
-            height="2626"
+            className="h-full w-full"
+            width="100%"
+            height="100%"
             viewBox="0 0 1440 2626"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

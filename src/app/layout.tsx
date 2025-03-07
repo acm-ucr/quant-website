@@ -58,10 +58,9 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} flex flex-col justify-between bg-[#100E37]`}
+        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} flex flex-col justify-between bg-[#100E37] relative`}
       > 
-
-        <div className="fixed top-0 left-0 right-0 bottom-0 -z-50 pointer-events-none select-none opacity-70 overflow-hidden mt-[-200px]">
+        <div className="absolute inset-0 -z-50 pointer-events-none select-none opacity-70 overflow-hidden mt-[-200px]">
           <svg width="1440" height="2626" viewBox="0 0 1440 2626" fill="none" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="1196.27" cy="472.797" rx="417.629" ry="368.558" fill="url(#paint0_radial_0_1)"/>
           <g filter="url(#filter1_f_0_1)">

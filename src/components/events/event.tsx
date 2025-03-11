@@ -52,10 +52,10 @@ const EventCard = ({
       viewport={{ once: false, amount: 0.4 }}
     >
       <div className="mb-20 hidden sm:mb-0 sm:flex sm:h-full sm:w-1/5 sm:flex-col sm:items-center sm:justify-start sm:pt-7 lg:h-full lg:w-1/5 lg:items-center lg:justify-center lg:pt-3">
-        <div className="text-center font-questrial text-base uppercase text-[#DDF0FE] sm:text-left sm:text-2xl sm:text-quant-blue-100 lg:text-center lg:text-xl">
+        <div className="sm:text-quant-blue-100 text-center font-questrial text-base uppercase text-[#DDF0FE] sm:text-left sm:text-2xl lg:text-center lg:text-xl">
           {day}
         </div>
-        <div className="-mt-2 font-questrial text-4xl font-bold text-quant-white sm:-mt-0 sm:text-left sm:text-6xl sm:font-normal lg:text-center lg:text-7xl">
+        <div className="text-quant-white -mt-2 font-questrial text-4xl font-bold sm:-mt-0 sm:text-left sm:text-6xl sm:font-normal lg:text-center lg:text-7xl">
           {date}
         </div>
       </div>
@@ -71,18 +71,18 @@ const EventCard = ({
           </div>
           <div className="w-full">
             <div className="flex flex-row justify-between">
-              <div className="mb-1 justify-start font-questrial text-xl font-bold text-quant-white sm:pb-0 sm:pt-10 sm:text-2xl lg:text-3xl">
+              <div className="text-quant-white mb-1 justify-start font-questrial text-xl font-bold sm:pb-0 sm:pt-10 sm:text-2xl lg:text-3xl">
                 {title}
               </div>
               <button
                 onClick={() => setIsExpanded((prev) => !prev)}
-                className="rounded-full p-2 text-quant-blue-100 transition hover:bg-white/20 sm:hidden"
+                className="text-quant-blue-100 rounded-full p-2 transition hover:bg-white/20 sm:hidden"
               >
                 {isExpanded ? <Minus size={20} /> : <Plus size={20} />}
               </button>
             </div>
             <div className="lg:h-2/8 mt-1 flex w-fit flex-row gap-3 sm:mt-0 sm:gap-5">
-              <div className="flex w-fit flex-row items-center gap-2 font-roboto text-quant-blue-100">
+              <div className="text-quant-blue-100 flex w-fit flex-row items-center gap-2 font-roboto">
                 <Image
                   src={LocationIcon}
                   alt="Location Icon"
@@ -102,7 +102,7 @@ const EventCard = ({
                   className="hidden sm:block sm:h-6 sm:w-6 md:h-7 md:w-7"
                 />
 
-                <div className="text-base text-quant-blue-100 sm:text-lg">
+                <div className="text-quant-blue-100 text-base sm:text-lg">
                   {time}
                 </div>
               </div>
@@ -114,7 +114,7 @@ const EventCard = ({
             )}
           </div>
         </div>
-        <div className="sm:w-5/7 hidden pt-3 font-roboto text-xs text-quant-gray sm:flex sm:h-full sm:pt-3 sm:text-base lg:h-full lg:w-5/6 lg:pt-2">
+        <div className="sm:w-5/7 text-quant-gray hidden pt-3 font-roboto text-xs sm:flex sm:h-full sm:pt-3 sm:text-base lg:h-full lg:w-5/6 lg:pt-2">
           {description}
         </div>
       </div>

@@ -17,7 +17,7 @@ const Navigation = () => {
       <div
         className={`mx-5 my-5 flex h-20 items-center justify-between sm:px-12 ${isNavOpen ? "border-b-2" : "border-b-0"} `}
       >
-        <div className={`flex:row flex gap-2 border-b-quant-white pr-8`}>
+        <div className={`flex:row border-b-quant-white flex gap-2 pr-8`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
               <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
@@ -67,18 +67,18 @@ const Navigation = () => {
           rel="noopener noreferrer"
           href={"https://discord.gg/bzCbpzZRtH"}
           className={
-            "group relative ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold duration-200 hover:scale-105 hover:border-blue-300 hover:bg-white hover:text-quant-navy min-[400px]:text-lg sm:text-xl md:w-[10rem] md:text-2xl"
+            "hover:text-quant-navy group relative ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold duration-200 hover:scale-105 hover:border-blue-300 hover:bg-white min-[400px]:text-lg sm:text-xl md:w-[10rem] md:text-2xl"
           }
         >
           <span className="group relative">
             JOIN US
-            <span className="absolute bottom-[0.1em] left-0 h-[0.1em] w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
+            <span className="bg-quant-navy absolute bottom-[0.1em] left-0 h-[0.1em] w-0 transition-all duration-300 group-hover:w-full"></span>
           </span>
         </Link>
       </div>
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col">
-          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
+          <div className="border-b-quant-white flex w-full flex-col gap-10 border-b-2 bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
             {NavItems.map(({ link, name }, i) => {
               return (
                 <Link

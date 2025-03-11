@@ -9,8 +9,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useQuery } from "@tanstack/react-query";
-import EventCard from "./event";
-import { motion } from "framer-motion";
 
 type EventProps = Partial<{
   day: string;
@@ -58,24 +56,14 @@ const fetchEvents = async (): Promise<EventProps[]> => {
         ? new Date(start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
-        : item.start.date
-          ? new Date(item.start.date)
+        : start.date
+          ? new Date(start.date)
               .toLocaleTimeString([], { hour: "numeric", hour12: true })
               .replace(/(AM|PM)/i, (match) => match.toLowerCase())
           : "N/A",
-      description: item.description || "",
+      description: description || "",
     }))
     .slice(0, 3);
-};
-
-const eventsVariant = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
 };
 
 const Events = () => {
@@ -121,7 +109,7 @@ const Events = () => {
             <DialogHeader>
               <DialogTitle>
                 <p className="text-xl">{current.title}</p>
-                <p className="text-base font-questrial">
+                <p className="font-questrial text-base">
                   {current.location} from{" "}
                   {new Date(current.date as string).toLocaleTimeString(
                     "en-US",

@@ -44,7 +44,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
 
   return (
     <div
-      className={`${currentMonth ? "text-black" : "text-gray-400"} h-24  border `}
+      className={`${currentMonth ? "text-black" : "text-gray-400"} h-24 border`}
     >
       <p className="sticky px-2 text-right text-white">{date.getDate()}</p>
 
@@ -58,7 +58,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="bg-blue-100 my-1 text-ellipsis p-1 text-left text-white"
+              className="my-1 text-ellipsis bg-blue-100 p-1 text-left text-white"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })
@@ -98,7 +98,8 @@ function Calendar({
         nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         nav_button_previous: "absolute left-1/3",
         nav_button_next: "absolute right-1/3",
-        table: "w-full border-collapse space-y-1 bg-gradient-to-tr from-[#506494] to-[#5c5898]",
+        table:
+          "w-full border-collapse space-y-1 bg-gradient-to-tr from-[#506494] to-[#5c5898]",
         head_row: "flex",
         head_cell:
           "text-muted-foreground text-white rounded-sm w-full font-questrial text-[0.8rem] border bg-[#305AF0]",

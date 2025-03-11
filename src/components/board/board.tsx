@@ -17,11 +17,11 @@ const Board = ({ image, name, position }: BoardProps) => {
         />
         <div className="border-quant-white absolute left-[30%] top-[9%] -z-10 h-full w-1/2 border-4 sm:left-[14%] sm:top-[7%] sm:w-3/4 sm:border-2"></div>
       </div>
-      <div className="-mb-2 pt-4 text-center font-questrial text-lg text-quant-white sm:mb-0 sm:text-2xl">
+      <div className="text-quant-white -mb-2 pt-4 text-center font-questrial text-lg sm:mb-0 sm:text-2xl">
         <span className="block sm:inline">{firstName}</span>
         <span className="block sm:inline">{lastName}</span>
       </div>
-      <div className="text-center font-questrial text-base text-quant-blue-100 sm:text-xl">
+      <div className="text-quant-blue-100 text-center font-questrial text-base sm:text-xl">
         {position}
       </div>
     </div>

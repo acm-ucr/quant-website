@@ -11,7 +11,7 @@ const ProjectsPage = () => {
         <div className="lg:w-1/4 lg:border-2"> </div>
         <div className="items-center text-center font-hanken text-2xl font-bold text-white lg:w-3/12 lg:text-5xl">
           {" "}
-          <Header title="PROJECTS" />{" "}
+          <Header>PROJECTS</Header>{" "}
         </div>
         <div className="w-[30%] border-2 lg:w-1/4"></div>
         <div className="lg:h-2 lg:w-2 lg:rotate-45 lg:bg-white"></div>

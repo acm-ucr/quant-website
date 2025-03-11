@@ -1,16 +1,23 @@
 "use client";
+import { Calendar } from "@/components/ui/calendar";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useQuery } from "@tanstack/react-query";
-import EventCard from "./event";
-import { motion } from "framer-motion";
 
-type EventProps = {
+type EventProps = Partial<{
   day: string;
   date: string;
   title: string;
   location: string;
   time: string;
   description: string;
-};
+}>;
 
 type ApiEvent = {
   summary?: string;
@@ -49,23 +56,18 @@ const fetchEvents = async (): Promise<EventProps[]> => {
         ? new Date(start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
-        : "All day",
+        : start.date
+          ? new Date(start.date)
+              .toLocaleTimeString([], { hour: "numeric", hour12: true })
+              .replace(/(AM|PM)/i, (match) => match.toLowerCase())
+          : "N/A",
       description: description || "",
     }))
     .slice(0, 3);
 };
 
-const eventsVariant = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
-
 const Events = () => {
+  const [current, setCurrent] = useState<EventProps>({});
   const {
     data: events = [],
     error,
@@ -97,32 +99,41 @@ const Events = () => {
     );
 
   return (
-    <motion.div
-      className="flex w-full flex-col gap-2 text-3xl sm:gap-5"
-      variants={eventsVariant}
-      initial="hidden"
-      whileInView="show"
-    >
-      {events.map(({ date, title, location, time, description }, index) => (
-        <motion.div
-          className="mb-4 flex items-center justify-center"
-          key={index}
-          variants={eventsVariant}
+    <>
+      {
+        <Dialog
+          open={Object.keys(current).length > 0}
+          onOpenChange={() => setCurrent({})}
         >
-          <EventCard
-            day={new Date(date).toLocaleString("en-US", {
-              weekday: "short",
-            })}
-            date={new Date(date).getDate().toString().padStart(2, "0")}
-            title={title}
-            location={location}
-            time={time}
-            description={description}
-            isInitiallyExpanded={index === 0}
-          />
-        </motion.div>
-      ))}
-    </motion.div>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>
+                <p className="text-xl">{current.title}</p>
+                <p className="font-questrial text-base">
+                  {current.location} from{" "}
+                  {new Date(current.date as string).toLocaleTimeString(
+                    "en-US",
+                    {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    },
+                  )}{" "}
+                  to{" "}
+                </p>
+              </DialogTitle>
+              <DialogDescription>{current.description}</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      }
+      <Calendar
+        mode="single"
+        selected={new Date()}
+        className="w-full rounded-md border"
+        events={[]}
+        setCurrent={setCurrent}
+      />
+    </>
   );
 };
 

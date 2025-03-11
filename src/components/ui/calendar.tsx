@@ -44,9 +44,9 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
 
   return (
     <div
-      className={`${currentMonth ? "text-black" : "text-gray-400"} h-24 overflow-y-scroll border`}
+      className={`${currentMonth ? "text-black" : "text-gray-400"} h-24  border `}
     >
-      <p className="sticky px-2 text-right">{date.getDate()}</p>
+      <p className="sticky px-2 text-right text-white">{date.getDate()}</p>
 
       {events?.map(({ title, start, end, location, description }, index) => {
         const startDate = new Date(start as string);
@@ -58,7 +58,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="bg-fencing-border-blue my-1 text-ellipsis p-1 text-left text-white"
+              className="bg-blue-100 my-1 text-ellipsis p-1 text-left text-white"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })
@@ -93,20 +93,20 @@ function Calendar({
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4 w-full",
         caption: "flex justify-center p-1 relative items-center",
-        caption_label: "text-sm font-medium",
+        caption_label: "text-[12px] lg:text-3xl font-questrial",
         nav: "space-x-1 flex items-center",
         nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         nav_button_previous: "absolute left-1/3",
         nav_button_next: "absolute right-1/3",
-        table: "w-full border-collapse space-y-1",
+        table: "w-full border-collapse space-y-1 bg-gradient-to-tr from-[#506494] to-[#5c5898]",
         head_row: "flex",
         head_cell:
-          "text-muted-foreground rounded-md w-full font-normal text-[0.8rem]",
+          "text-muted-foreground text-white rounded-sm w-full font-questrial text-[0.8rem] border bg-[#305AF0]",
         row: "flex w-full",
         cell: "w-full text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
         day: cn(
           buttonVariants({ variant: "ghost" }),
-          "w-full p-0 font-normal aria-selected:opacity-100 rounded-none border",
+          "w-full p-0 font-questrial aria-selected:opacity-100 rounded-none border",
         ),
         day_range_end: "day-range-end",
         day_selected:
@@ -122,10 +122,10 @@ function Calendar({
       }}
       components={{
         IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
+          <ChevronLeft className={cn("h-8 w-8", className)} {...props} />
         ),
         IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("h-4 w-4", className)} {...props} />
+          <ChevronRight className={cn("h-8 w-8", className)} {...props} />
         ),
         Day: ({ displayMonth, date }) => (
           <Day

@@ -10,7 +10,7 @@ import {
 } from "next/font/google";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import BackgroundElipses from "@/public/background/Elipses.svg";
+import BackgroundEllipses from "@/public/background/Ellipses.svg";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps) {
         className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} relative flex flex-col justify-between bg-[#100E37]`}
       >
         <div className="pointer-events-none absolute inset-0 -z-50 mt-[-200px] select-none overflow-hidden opacity-70">
-          <Image src={BackgroundElipses} alt="" aria-hidden="true" />
+          <Image src={BackgroundEllipses} alt="" aria-hidden="true" />
         </div>
 
         <NavBar />

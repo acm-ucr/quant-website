@@ -11,40 +11,35 @@ import NavItems from "@/data/navigation";
 const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
   const pathname = usePathname();
   return (
     <div>
       <div
-        className={`mx-5 my-5 flex h-20 items-center justify-between sm:px-12 ${isNavOpen ? "border-b-2" : "border-b-0"}`}
+        className={`mx-5 my-5 flex h-20 items-center justify-between sm:px-12 ${isNavOpen ? "border-b-2" : "border-b-0"} `}
       >
-        <div className={`flex:row border-b-quant-white flex sm:gap-3`}>
+        <div className={`flex:row flex gap-2 border-b-quant-white pr-8`}>
           <div className="flex w-14 items-center justify-center lg:hidden">
             {!isNavOpen ? (
-              <Link href="" onClick={toggleNav}>
-                <Image
-                  src={Bar}
-                  alt="task bar"
-                  className="h-full w-full"
-                  onClick={toggleNav}
-                />
-              </Link>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
+                <Image src={Bar} alt="task bar" className="h-full w-full" />
+              </button>
             ) : (
-              <Link href="" onClick={toggleNav}>
+              <button onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}>
                 <Image
                   src={ExitBar}
                   alt="exit task bar"
                   className="h-full w-full"
                 />
-              </Link>
+              </button>
             )}
           </div>
-          <Link href={"/"}>
-            <div className="flex w-[12.5rem] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[#100F48]">
-              <Image src={Logo} alt="Logo" className="w-[35%]" />
-              <div className="flex items-center pl-2 font-istok-web text-xl font-bold text-white">
+          <Link href="/">
+            <div
+              className="flex w-[5] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[rgb(16,15,72)] md:w-[12.5rem]"
+              onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
+            >
+              <Image src={Logo} alt="Logo" className="w-[30%] md:w-[35%]" />
+              <div className="text-md flex items-center pl-2 pr-3 font-istok-web font-bold text-white md:text-xl">
                 Quant Club at UCR
               </div>
             </div>
@@ -52,16 +47,16 @@ const Navigation = () => {
         </div>
         {!isNavOpen ? (
           <div className="hidden w-1/3 flex-row items-center justify-around gap-10 font-jost text-xl font-medium text-white lg:flex lg:gap-0">
-            {NavItems.map((item, i) => {
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
+                  href={link}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}
@@ -72,26 +67,29 @@ const Navigation = () => {
           rel="noopener noreferrer"
           href={"https://discord.gg/bzCbpzZRtH"}
           className={
-            "ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold hover:underline min-[400px]:text-lg md:w-[10rem]"
+            "group relative ml-[0.5rem] flex h-11 w-[8rem] items-center justify-center rounded-3xl bg-[#C6C6E4] font-hanken text-xs font-semibold duration-200 hover:scale-105 hover:border-blue-300 hover:bg-white hover:text-quant-navy min-[400px]:text-lg sm:text-xl md:w-[10rem] md:text-2xl"
           }
         >
-          JOIN US
+          <span className="group relative">
+            JOIN US
+            <span className="absolute bottom-[0.1em] left-0 h-[0.1em] w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
+          </span>
         </Link>
       </div>
       {isNavOpen ? (
-        <div className="absolute left-0 z-10 flex w-full flex-col md:top-[10%]">
-          <div className="border-b-quant-white flex w-full flex-col gap-10 border-b-2 bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
-            {NavItems.map((item, i) => {
+        <div className="absolute left-0 z-10 flex w-full flex-col">
+          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
+            {NavItems.map(({ link, name }, i) => {
               return (
                 <Link
                   key={i}
-                  href={item.link}
-                  onClick={toggleNav}
+                  href={link}
+                  onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
                   className={`hover:underline ${
-                    pathname === item.link ? "font-extrabold" : "border-0"
+                    pathname === link ? "font-extrabold" : "border-0"
                   }`}
                 >
-                  {item.name}
+                  {name}
                 </Link>
               );
             })}

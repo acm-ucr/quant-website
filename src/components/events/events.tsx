@@ -9,7 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useQuery } from "@tanstack/react-query";
-// import EventCard from "./event";
+import EventCard from "./event";
+import { motion } from "framer-motion";
 
 type EventProps = Partial<{
   day: string;
@@ -37,7 +38,6 @@ const fetchEvents = async (): Promise<EventProps[]> => {
     }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}
         &singleEvents=true&orderBy=startTime&timeMin=${new Date().toISOString()}`,
   );
-
   if (!response.ok) {
     throw new Error("Error fetching events");
   }
@@ -45,17 +45,17 @@ const fetchEvents = async (): Promise<EventProps[]> => {
   const data = await response.json();
 
   return (data.items || [])
-    .map((item: ApiEvent) => ({
+    .map(({ summary, description, location, start }: ApiEvent) => ({
       day: new Date(
-        item.start.dateTime || item.start.date || new Date(),
+        start.dateTime || start.date || new Date(),
       ).toLocaleDateString(),
       date: new Date(
-        item.start.dateTime || item.start.date || new Date(),
+        start.dateTime || start.date || new Date(),
       ).toLocaleDateString(),
-      title: item.summary || "Unnamed Event",
-      location: item.location || "N/A",
-      time: item.start.dateTime
-        ? new Date(item.start.dateTime)
+      title: summary || "Unnamed Event",
+      location: location || "N/A",
+      time: start.dateTime
+        ? new Date(start.dateTime)
             .toLocaleTimeString([], { hour: "numeric", hour12: true })
             .replace(/(AM|PM)/i, (match) => match.toLowerCase())
         : item.start.date
@@ -66,6 +66,16 @@ const fetchEvents = async (): Promise<EventProps[]> => {
       description: item.description || "",
     }))
     .slice(0, 3);
+};
+
+const eventsVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
 };
 
 const Events = () => {
@@ -86,17 +96,17 @@ const Events = () => {
       </p>
     );
 
-  if (events.length === 0)
-    return (
-      <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
-        No Upcoming Events
-      </p>
-    );
-
   if (error)
     return (
       <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
         Error fetching events
+      </p>
+    );
+
+  if (events.length === 0)
+    return (
+      <p className="my-10 flex items-center justify-center font-questrial text-3xl text-white">
+        No Upcoming Events
       </p>
     );
 

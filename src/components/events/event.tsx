@@ -1,83 +1,124 @@
+"use client";
+
 import Image from "next/image";
 import LocationIcon from "@/public/icons/LocationIconBlue.svg";
 import TimeIcon from "@/public/icons/timeIcon.svg";
 import TimeIconMobile from "@/public/icons/TimeIconMobile.svg";
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
 
-const EventCard = (props: {
+type EventCardProps = {
   day: string;
   date: string;
   title: string;
   location: string;
   time: string;
   description: string;
-}) => {
+  isInitiallyExpanded: boolean;
+};
+
+const eventCardAnimation = {
+  hidden: { opacity: 0, y: 20, scale: 0.65, rotate: -1 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const EventCard = ({
+  day,
+  date,
+  title,
+  location,
+  time,
+  description,
+  isInitiallyExpanded,
+}: EventCardProps) => {
+  const [isExpanded, setIsExpanded] = useState(isInitiallyExpanded);
   return (
-    <div className="flex w-11/12 items-center gap-6 rounded-3xl bg-[#FFFFFF61] p-4 sm:h-1/3 sm:w-4/5 sm:pb-12 lg:h-1/3 lg:w-3/4">
-      <div className="mb-20 hidden sm:mb-0 sm:flex sm:h-full sm:w-4/5 sm:flex-col sm:items-center sm:justify-start sm:pt-7 lg:h-full lg:w-1/5 lg:items-center lg:justify-center lg:pt-3">
-        <div className="sm:text-quant-blue-100 text-center font-questrial text-base uppercase text-[#DDF0FE] sm:text-left sm:text-2xl lg:text-center lg:text-xl">
-          {props.day}
+    <motion.div
+      className="flex w-11/12 items-center gap-6 rounded-3xl bg-[#FFFFFF61] p-4 sm:h-1/3 sm:w-4/5 sm:pb-12 lg:h-1/3 lg:w-3/4"
+      variants={eventCardAnimation}
+      initial="hidden"
+      whileInView="show"
+      whileHover={{
+        y: [-3, 0, -3],
+        transition: { duration: 1.5, repeat: Infinity, repeatType: "reverse" },
+      }}
+      viewport={{ once: false, amount: 0.4 }}
+    >
+      <div className="mb-20 hidden sm:mb-0 sm:flex sm:h-full sm:w-1/5 sm:flex-col sm:items-center sm:justify-start sm:pt-7 lg:h-full lg:w-1/5 lg:items-center lg:justify-center lg:pt-3">
+        <div className="text-center font-questrial text-base uppercase text-[#DDF0FE] sm:text-left sm:text-2xl sm:text-quant-blue-100 lg:text-center lg:text-xl">
+          {day}
         </div>
-        <div className="text-quant-white -mt-2 font-questrial text-4xl font-bold sm:-mt-0 sm:text-left sm:text-6xl sm:font-normal lg:text-center lg:text-7xl">
-          {props.date}
+        <div className="-mt-2 font-questrial text-4xl font-bold text-quant-white sm:-mt-0 sm:text-left sm:text-6xl sm:font-normal lg:text-center lg:text-7xl">
+          {date}
         </div>
       </div>
-      <div className="flex flex-col sm:h-full lg:h-full lg:w-4/5">
+      <div className="flex w-full flex-col sm:h-full lg:h-full">
         <div className="flex gap-5">
           <div className="sm:hidden">
             <div className="text-center font-questrial text-base uppercase text-[#DDF0FE]">
-              {props.day}
+              {day}
             </div>
             <div className="-mt-2 font-questrial text-4xl font-bold text-[#E8EDF3]">
-              {props.date}
+              {date}
             </div>
           </div>
-          <div className="sm:w-2/3">
-            <div className="text-quant-white justify-start pb-1 font-questrial text-xl font-medium sm:pb-0 sm:pt-10 sm:text-3xl lg:pl-10 lg:text-4xl">
-              {props.title}
+          <div className="w-full">
+            <div className="flex flex-row justify-between">
+              <div className="mb-1 justify-start font-questrial text-xl font-bold text-quant-white sm:pb-0 sm:pt-10 sm:text-2xl lg:text-3xl">
+                {title}
+              </div>
+              <button
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="rounded-full p-2 text-quant-blue-100 transition hover:bg-white/20 sm:hidden"
+              >
+                {isExpanded ? <Minus size={20} /> : <Plus size={20} />}
+              </button>
             </div>
-            <div className="lg:h-2/8 mt-1 flex flex-row gap-3 sm:mt-0 sm:gap-20 lg:w-1/2 lg:pl-8">
-              <div className="h-1/8 text-quant-blue-100 flex w-1/5 flex-row gap-2 pl-1 font-roboto sm:text-lg">
+            <div className="lg:h-2/8 mt-1 flex w-fit flex-row gap-3 sm:mt-0 sm:gap-5">
+              <div className="flex w-fit flex-row items-center gap-2 font-roboto text-quant-blue-100">
                 <Image
                   src={LocationIcon}
                   alt="Location Icon"
-                  width={24}
-                  height={24}
-                  className="h-3/5 sm:mt-1 sm:h-4/5"
+                  className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
                 />
-                <div className="-translate-y-[1px] text-xs sm:-translate-y-0 sm:text-lg">
-                  {props.location}
-                </div>
+                <div className="text-base sm:text-lg">{location}</div>
               </div>
-              <div className="h-7/8 text-quant-blue-100 flex flex-row gap-2 pl-10 font-roboto text-sm sm:translate-x-12 sm:text-lg md:-translate-x-10 lg:-translate-x-0">
+              <div className="h-7/8 flex w-fit flex-row items-center gap-2 font-roboto">
                 <Image
                   src={TimeIconMobile}
                   alt="Time Icon"
-                  width={24}
-                  height={24}
-                  className="h-3/5 -translate-x-4 sm:hidden sm:-translate-x-0"
+                  className="h-5 w-5 sm:hidden"
                 />
                 <Image
                   src={TimeIcon}
                   alt="Time Icon"
-                  width={24}
-                  height={24}
-                  className="hidden sm:block"
+                  className="hidden sm:block sm:h-6 sm:w-6 md:h-7 md:w-7"
                 />
-                <div className="-translate-x-5 -translate-y-[1px] text-xs sm:-translate-x-0 sm:-translate-y-0 sm:text-lg">
-                  {props.time}
+
+                <div className="text-base text-quant-blue-100 sm:text-lg">
+                  {time}
                 </div>
               </div>
             </div>
-            <div className="pt-2 text-xs text-[#BDBDBD] sm:hidden">
-              {props.description}
-            </div>
+            {isExpanded && (
+              <div className="mt-2 text-xs text-[#BDBDBD] transition-opacity duration-300 sm:hidden">
+                {description}
+              </div>
+            )}
           </div>
         </div>
-        <div className="sm:w-5/7 text-quant-gray hidden pt-3 font-roboto text-xs sm:flex sm:h-full sm:pt-3 sm:text-lg lg:h-full lg:w-5/6 lg:pl-10 lg:pt-2">
-          {props.description}
+        <div className="sm:w-5/7 hidden pt-3 font-roboto text-xs text-quant-gray sm:flex sm:h-full sm:pt-3 sm:text-base lg:h-full lg:w-5/6 lg:pt-2">
+          {description}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

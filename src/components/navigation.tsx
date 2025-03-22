@@ -78,7 +78,7 @@ const Navigation = () => {
       </div>
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col">
-          <div className="border-b-quant-white flex w-full flex-col gap-10 border-b-2 bg-[#100E37] pb-10 pl-20 font-jost text-4xl font-medium text-white">
+          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-lg font-medium text-white sm:text-xl md:text-4xl">
             {NavItems.map(({ link, name }, i) => {
               return (
                 <Link

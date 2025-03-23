@@ -65,7 +65,7 @@ const eventsVariant = {
   },
 };
 
-const Events = () => {
+const EventCards = () => {
   const {
     data: events = [],
     error,
@@ -126,4 +126,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventCards;

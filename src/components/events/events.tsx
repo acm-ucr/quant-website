@@ -98,7 +98,7 @@ const EventCards = () => {
 
   return (
     <motion.div
-      className="flex w-full flex-col gap-2 text-3xl sm:gap-5"
+      className="mb-10 flex w-full flex-col gap-2 text-3xl sm:gap-5"
       variants={eventsVariant}
       initial="hidden"
       whileInView="show"
@@ -108,6 +108,9 @@ const EventCards = () => {
           className="mb-4 flex items-center justify-center"
           key={index}
           variants={eventsVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
         >
           <EventCard
             day={new Date(date).toLocaleString("en-US", {

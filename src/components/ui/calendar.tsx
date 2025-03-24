@@ -41,12 +41,16 @@ interface DayProps {
 
 const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
   const currentMonth = displayMonth.getMonth() === date.getMonth();
-
+  const currentDate = new Date();
+  const isToday =
+    date.getDate() === currentDate.getDate() &&
+    date.getMonth() === currentDate.getMonth() &&
+    date.getFullYear() === currentDate.getFullYear();
   return (
     <div
-      className={`${currentMonth ? "text-black" : "text-gray-400"} h-24 border`}
+      className={`${currentMonth ? "text-white" : "text-gray-400"} h-24 border ${isToday && "bg-quant-gray-100"}`}
     >
-      <p className="sticky px-2 text-right text-white">{date.getDate()}</p>
+      <p className="sticky px-2 text-right">{date.getDate()}</p>
 
       {events?.map(({ title, start, end, location, description }, index) => {
         const startDate = new Date(start as string);
@@ -58,7 +62,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="mx-3 my-1 text-ellipsis bg-quant-blue-200 p-1 text-left font-questrial text-white hover:cursor-pointer"
+              className="my-1 text-ellipsis bg-quant-blue-300 text-left font-questrial text-white hover:cursor-pointer md:mx-3 md:p-1"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })

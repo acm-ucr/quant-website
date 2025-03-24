@@ -58,7 +58,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="my-1 text-ellipsis bg-blue-100 p-1 text-left text-white"
+              className="mx-3 my-1 text-ellipsis bg-quant-blue-200 p-1 text-left text-white"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })
@@ -91,7 +91,7 @@ function Calendar({
       className={cn("p-3", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4 w-full",
+        month: "space-y-4",
         caption: "flex justify-center p-1 relative items-center",
         caption_label: "text-[12px] lg:text-3xl font-questrial",
         nav: "space-x-1 flex items-center",

@@ -17,7 +17,6 @@ import {
 
 const Events = () => {
   const [current, setCurrent] = useState<EventProps>({});
-  const [showDialog, setShowDialog] = useState(false);
 
   const { data } = useQuery({
     queryKey: ["repoData"],

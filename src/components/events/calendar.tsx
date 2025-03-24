@@ -57,8 +57,8 @@ const Events = () => {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>
-                <p className="text-xl">{current.title}</p>
-                <p className="text-base font-normal">
+                <p className="font-questrial text-xl">{current.title}</p>
+                <p className="font-questrial text-base">
                   {current.location} from{" "}
                   {new Date(current.start as string).toLocaleTimeString(
                     "en-US",

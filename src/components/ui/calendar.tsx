@@ -62,7 +62,7 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="my-1 text-ellipsis bg-quant-blue-300 text-left font-questrial text-white hover:cursor-pointer md:mx-3 md:p-1"
+              className="my-1 text-ellipsis rounded-md bg-quant-blue-300 text-left font-questrial text-white hover:cursor-pointer md:mx-3 md:p-1"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })

@@ -18,8 +18,8 @@ import {
 const Events = () => {
   const [current, setCurrent] = useState<EventProps>({});
 
-  const { data } = useQuery({
-    queryKey: ["repoData"],
+  const { data, error } = useQuery({
+    queryKey: ["calendarEvents"],
     queryFn: async () => {
       const response =
         await fetch(`https://www.googleapis.com/calendar/v3/calendars/${
@@ -45,9 +45,7 @@ const Events = () => {
     },
   });
 
-  console.log(data);
-  // TODO: HANDLE ERROR AND PENDING STATES
-  //  console.log(error, isPending);
+  if (error) return <>Error Occurred!</>;
 
   return (
     <>
@@ -84,7 +82,7 @@ const Events = () => {
       <Calendar
         mode="single"
         selected={new Date()}
-        className="w-5/6 rounded-md"
+        className="w-full rounded-md md:w-5/6"
         events={data}
         setCurrent={setCurrent}
       />

@@ -58,17 +58,20 @@ const Day = ({ date, displayMonth, events, setCurrent }: DayProps) => {
         ) {
           return (
             <div
-              className="mx-3 my-1 text-ellipsis bg-quant-blue-200 p-1 text-left text-white"
+              className="mx-3 my-1 text-ellipsis bg-quant-blue-200 p-1 text-left font-questrial text-white hover:cursor-pointer"
               key={index}
               onClick={() =>
                 setCurrent({ title, start, end, location, description })
               }
             >
-              {title} -{" "}
-              {startDate.toLocaleTimeString("en-US", {
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+              {title}
+              <div className="hidden md:inline">
+                -{" "}
+                {startDate.toLocaleTimeString("en-US", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </div>
             </div>
           );
         }
@@ -91,13 +94,13 @@ function Calendar({
       className={cn("p-3", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
+        month: "space-y-4 w-full",
         caption: "flex justify-center p-1 relative items-center",
-        caption_label: "text-[12px] lg:text-3xl font-questrial",
+        caption_label: "text-xl lg:text-3xl font-questrial",
         nav: "space-x-1 flex items-center",
         nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
-        nav_button_previous: "absolute left-1/3",
-        nav_button_next: "absolute right-1/3",
+        nav_button_previous: "absolute left-1/4 lg:left-1/3",
+        nav_button_next: "absolute right-1/4 lg:right-1/3",
         table:
           "w-full border-collapse space-y-1 bg-gradient-to-tr from-[#506494] to-[#5c5898]",
         head_row: "flex",

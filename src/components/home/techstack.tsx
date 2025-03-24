@@ -23,7 +23,7 @@ const TechStack = () => {
     <div className="flex h-full w-full flex-col items-center justify-center gap-10 px-4">
       {/* Title */}
       <motion.div
-        className="text-[clamp(1.5rem, 4vw, 2.5rem)] font-hanken text-3xl font-bold text-white underline"
+        className="text-[clamp(1.5rem, 4vw, 2.5rem)] font-hanken text-3xl font-bold text-white"
         transition={{ duration: 1.7, delay: 0.2 }}
         variants={animationShow}
         initial="hidden"

@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-center gap-4 pt-2">
-            <div className="font-hanken text-lg font-semibold underline">
+            <div className="font-hanken text-lg font-semibold">
               <p>Contact Us</p>
             </div>
             <div className="flex gap-8">

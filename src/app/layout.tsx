@@ -9,6 +9,8 @@ import {
   Istok_Web,
 } from "next/font/google";
 import Footer from "@/components/footer";
+import Image from "next/image";
+import BackgroundEllipses from "@/public/background/Ellipses.svg";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -58,8 +60,17 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} flex flex-col justify-between bg-[#100E37]`}
+        className={`${jost.variable} ${roboto.variable} ${questrial.variable} ${hanken_grotesk.variable} ${istok_web.variable} relative flex flex-col justify-between bg-[#100E37]`}
       >
+        <div className="pointer-events-none absolute inset-0 -z-50 mt-[20%] select-none overflow-hidden opacity-70 lg:mt-[5%]">
+          <Image
+            src={BackgroundEllipses}
+            alt="Background Ellipses"
+            aria-hidden="true"
+            className="w-full"
+          />
+        </div>
+
         <NavBar />
         <div className="flex w-full flex-col items-center justify-center text-white">
           <ReactQueryClientProvider>{children}</ReactQueryClientProvider>

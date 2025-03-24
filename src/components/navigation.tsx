@@ -34,10 +34,7 @@ const Navigation = () => {
             )}
           </div>
           <Link href="/">
-            <div
-              className="flex w-[5] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[rgb(16,15,72)] md:w-[12.5rem]"
-              onClick={() => setIsNavOpen((isNavOpen) => !isNavOpen)}
-            >
+            <div className="flex w-[5] flex-row bg-gradient-to-l from-[#272592] via-[#272592] to-[rgb(16,15,72)] md:w-[12.5rem]">
               <Image src={Logo} alt="Logo" className="w-[30%] md:w-[35%]" />
               <div className="text-md flex items-center pl-2 pr-3 font-istok-web font-bold text-white md:text-xl">
                 Quant Club at UCR
@@ -78,7 +75,7 @@ const Navigation = () => {
       </div>
       {isNavOpen ? (
         <div className="absolute left-0 z-10 flex w-full flex-col">
-          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-lg font-medium text-white sm:text-xl md:text-4xl">
+          <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-xl font-medium text-white sm:text-xl md:text-4xl">
             {NavItems.map(({ link, name }, i) => {
               return (
                 <Link

@@ -26,7 +26,7 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
     >
       {variant === "arrows" ? (
         <div className="hidden w-full py-5 md:flex">
-          <div className="mx-auto flex w-3/4 items-center justify-between">
+          <div className="mx-auto flex w-11/12 items-center justify-between xl:w-3/4">
             <Image
               src={leftLine}
               alt="left-line"

@@ -1,43 +1,27 @@
-import ExampleImage from "@/public/board/PersonImage.svg";
+import Tushar from "@/public/board/Tushar.jpg";
+import Amaan from "@/public/board/Amaan.jpg";
+import Tegh from "@/public/board/Tegh.jpg";
+import Avo from "@/public/board/Avo.jpg";
+
 export default [
   {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
+    image: Tushar,
+    name: "Tushar Kharya",
+    position: "President CoFounder",
   },
   {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
+    image: Amaan,
+    name: "Amaan Tootla",
+    position: "Vice President CoFounder",
   },
   {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
+    image: Tegh,
+    name: "Tegh Gill",
+    position: "Treasury",
   },
   {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
-  },
-  {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
-  },
-  {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
-  },
-  {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
-  },
-  {
-    image: ExampleImage,
-    name: "FirstName LastName",
-    position: "Position",
+    image: Avo,
+    name: "Avo Karamusyan",
+    position: "Secretary",
   },
 ];

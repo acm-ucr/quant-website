@@ -51,5 +51,6 @@
     "tailwindcss-animate": "^1.0.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1"
+    
   }
 }

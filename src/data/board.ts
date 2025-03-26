@@ -1,7 +1,7 @@
-import Tushar from "@/public/board/Tushar.jpg";
-import Amaan from "@/public/board/Amaan.jpg";
-import Tegh from "@/public/board/Tegh.jpg";
-import Avo from "@/public/board/Avo.jpg";
+import Tushar from "@/public/board/Tushar.webp";
+import Amaan from "@/public/board/Amaan.webp";
+import Tegh from "@/public/board/Tegh.webp";
+import Avo from "@/public/board/Avo.webp";
 
 export default [
   {

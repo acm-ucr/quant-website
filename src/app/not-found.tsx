@@ -6,12 +6,12 @@ const NotFound = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col content-center items-center justify-center">
       <Image src={GRID} alt="grid" className="-z-10 w-4/5" />
-      <div className="absolute left-1/2 top-[47%] flex w-4/5 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5">
+      <div className="absolute left-1/2 top-1/2 flex w-4/5 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5">
         <div className="flex flex-col items-center justify-center text-center">
           <div className="font-mono text-6xl leading-none text-quant-white md:text-9xl">
             404
           </div>
-          <div className="w-2/3 border-b-4 border-[#5BC6ED]"></div>
+          <div className="w-2/3 border-b-4 border-quant-blue-300"></div>
         </div>
         <div className="font-questrial text-3xl font-bold leading-none text-quant-white">
           PAGE NOT FOUND
@@ -25,7 +25,7 @@ const NotFound = () => {
             <span className="relative">
               Back to Home
               {/* underline animation, left and bottom to set initial position, w and h to set initial length and thickness*/}
-              <span className="absolute bottom-[0.1em] left-0 h-[0.1em] w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-quant-navy transition-all duration-300 group-hover:w-full"></span>
             </span>
           </Link>
         </div>

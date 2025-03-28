@@ -39,8 +39,8 @@ const Project = ({
       viewport={{ once: true, amount: 0.5 }}
       className="max-w-3/4 min-h-fit rounded-lg text-sm max-lg:border-[1px] max-lg:border-quant-gray max-lg:bg-quant-gray-100 lg:flex lg:h-2/6 lg:w-fit lg:flex-col lg:text-lg"
     >
-      <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:items-center lg:justify-center lg:gap-24 lg:p-8 lg:text-white">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:flex lg:min-h-44 lg:min-w-44 lg:items-center lg:justify-center lg:rounded-full">
+      <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:gap-24 lg:p-8 lg:text-white">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-quant-blue-200 lg:min-h-44 lg:min-w-44">
           <Image className="w-20 max-lg:w-10" src={image_src} alt={image_alt} />
         </div>
         <div className="flex flex-col justify-center max-lg:items-center">

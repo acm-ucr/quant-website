@@ -4,7 +4,7 @@ import Header from "../../components/header";
 import Boards from "@/components/board/boards";
 import { motion } from "framer-motion";
 
-const Board = () => {
+const BoardPage = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,4 +29,4 @@ const Board = () => {
   );
 };
 
-export default Board;
+export default BoardPage;

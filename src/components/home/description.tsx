@@ -59,13 +59,13 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         style={{
           width: "calc(100% - 280px)",
         }}
-      ></div>
+      />
       <div
         className="absolute right-24 top-0 hidden w-0.5 bg-white md:block"
         style={{
           height: "calc(100% - 120px)",
         }}
-      ></div>
+      />
     </div>
   );
 };

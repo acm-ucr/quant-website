@@ -73,7 +73,7 @@ const Navigation = () => {
           </span>
         </Link>
       </div>
-      {isNavOpen ? (
+      {isNavOpen && (
         <div className="absolute left-0 z-10 flex w-full flex-col">
           <div className="flex w-full flex-col gap-10 border-b-2 border-b-quant-white bg-[#100E37] pb-10 pl-20 font-jost text-xl font-medium text-white sm:text-xl md:text-4xl">
             {NavItems.map(({ link, name }, i) => {
@@ -93,7 +93,7 @@ const Navigation = () => {
           </div>
           <div className="h-screen w-screen bg-[#100E37]/50"></div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

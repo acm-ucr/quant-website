@@ -11,7 +11,7 @@ const NotFound = () => {
           <div className="font-mono text-6xl leading-none text-quant-white md:text-9xl">
             404
           </div>
-          <div className="w-2/3 border-b-4 border-[#5BC6ED]"></div>
+          <div className="w-2/3 border-b-4 border-[#5BC6ED]" />
         </div>
         <div className="font-questrial text-3xl font-bold leading-none text-quant-white">
           PAGE NOT FOUND

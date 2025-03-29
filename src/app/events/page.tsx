@@ -6,7 +6,7 @@ const EventsPage = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-10">
       <Events />
-      <Header>Upcoming Events</Header>
+      <Header>UPCOMING EVENTS</Header>
       <EventCards />
     </div>
   );

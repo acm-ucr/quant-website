@@ -13,9 +13,9 @@ const Landing = () => {
         }}
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        className="absolute font-jost text-6xl font-bold md:text-9xl"
+        className="absolute font-jost text-5xl font-bold md:text-7xl xl:text-9xl"
       >
-        Welcome to Quant!
+        Quant at UCR
       </motion.div>
       <Image src={CHART} alt="Line chart" />
     </div>

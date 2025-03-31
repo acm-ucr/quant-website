@@ -3,8 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import leftLine from "/public/header/left-line.svg";
 import rightLine from "/public/header/right-line.svg";
-import leftArrow from "/public/header/chevron-left.svg";
-import rightArrow from "/public/header/chevron-right.svg";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type HeaderProps = {
   children: React.ReactNode;
@@ -53,30 +52,26 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
         </div>
       ) : (
         <div className="hidden w-full items-center justify-center gap-x-12 py-5 md:flex">
-          <Image
-            src={leftArrow}
-            alt="left-arrow"
+          <ChevronLeft
+            aria-label="left-arrow"
             aria-hidden="true"
             className="flex h-full"
           />
           <div className="text-center font-hanken text-5xl font-bold text-white">
             {children}
           </div>
-          <Image
-            src={rightArrow}
-            alt="right-arrow"
+          <ChevronRight
+            aria-label="right-arrow"
             aria-hidden="true"
             className="flex h-full"
           />
         </div>
       )}
 
-      <div className="flex w-full py-5 md:hidden">
-        <div className="mx-auto flex w-3/4 flex-col items-center justify-center gap-4">
-          <div className="relative inline-block text-center font-hanken text-2xl font-bold text-white">
-            {children}
-            <div className="mt-0 h-1 w-full bg-white"></div>
-          </div>
+      <div className="mx-auto flex w-full flex-col items-center justify-center gap-4 py-5 md:hidden">
+        <div className="relative inline-block text-center font-hanken text-2xl font-bold text-white">
+          {children}
+          <div className="mt-0 h-1 w-full bg-white" />
         </div>
       </div>
     </motion.div>

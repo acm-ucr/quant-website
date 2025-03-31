@@ -47,7 +47,7 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
         <div className="flex w-full flex-col items-center justify-center py-5">
           <div className="relative inline-block w-3/4 text-center font-hanken text-5xl font-bold text-white">
             {children}
-            <div className="mt-0 h-1 w-full bg-white"></div>
+            <div className="mt-0 h-1 w-full bg-white" />
           </div>
         </div>
       ) : (

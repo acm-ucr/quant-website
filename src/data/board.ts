@@ -1,27 +1,33 @@
-import Tushar from "@/public/board/Tushar.webp";
 import Amaan from "@/public/board/Amaan.webp";
-import Tegh from "@/public/board/Tegh.webp";
 import Avo from "@/public/board/Avo.webp";
+import Andrew from "@/public/board/Andrew.webp";
+import Brandon from "@/public/board/Brandon.webp";
+import Joel from "@/public/board/Joel.webp";
 
 export default [
   {
-    image: Tushar,
-    name: "Tushar Kharya",
-    position: "President CoFounder",
-  },
-  {
     image: Amaan,
     name: "Amaan Tootla",
-    position: "Vice President CoFounder",
-  },
-  {
-    image: Tegh,
-    name: "Tegh Gill",
-    position: "Treasury",
+    position: "President",
   },
   {
     image: Avo,
     name: "Avo Karamusyan",
+    position: "Vice President",
+  },
+  {
+    image: Andrew,
+    name: "Andrew Do",
+    position: "Treasurer",
+  },
+  {
+    image: Brandon,
+    name: "Brandon Nguyen",
+    position: "Head of Technical Projects",
+  },
+  {
+    image: Joel,
+    name: "Joel Cha",
     position: "Secretary",
   },
 ];

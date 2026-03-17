@@ -5,6 +5,7 @@ import Header from "@/components/header";
 const EventsPage = () => {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-10">
+      <title>UCR Quant - Events</title>
       <Events />
       <Header>UPCOMING EVENTS</Header>
       <EventCards />

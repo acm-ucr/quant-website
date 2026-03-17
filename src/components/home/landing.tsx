@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 const Landing = () => {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center">
-      <motion.div
+      <motion.h1
         transition={{
           duration: 0.7,
           delay: 0.2,
@@ -16,7 +16,7 @@ const Landing = () => {
         className="absolute font-jost text-5xl font-bold md:text-7xl xl:text-9xl"
       >
         Quant at UCR
-      </motion.div>
+      </motion.h1>
       <Image src={CHART} alt="Line chart" />
     </div>
   );

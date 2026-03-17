@@ -5,13 +5,16 @@ export default [
   {
     icon: Mail,
     link: "mailto:ucrquantclub@gmail.com",
+    name: "Email",
   },
   {
     icon: SiInstagram,
     link: "https://www.instagram.com/quantclubucr/",
+    name: "Instagram",
   },
   {
     icon: SiLinkedin,
     link: "https://www.linkedin.com/company/quantitative-analysis-club-at-ucr/",
+    name: "Linkedin",
   },
 ];

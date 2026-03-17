@@ -14,13 +14,12 @@ const Board = ({ image, name, position }: BoardProps) => {
         <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 border-2 border-quant-white" />
         <Image src={image} alt={`BoardMember: ${name}`} className="w-full" />
       </div>
-      <div className="ml-4 mt-5 flex w-full flex-row justify-center gap-2 font-questrial text-lg text-quant-white sm:text-2xl">
-        <span className="block sm:inline">{firstName}</span>{" "}
-        <span className="block sm:inline">{lastName}</span>
-      </div>
-      <div className="ml-4 w-full text-center font-questrial text-base text-quant-blue-100 sm:text-xl">
+      <h3 className="ml-4 mt-5 flex w-full flex-row justify-center gap-2 font-questrial text-lg text-quant-white sm:text-2xl">
+        {firstName} {lastName}
+      </h3>
+      <h4 className="ml-4 w-full text-center font-questrial text-base text-quant-blue-100 sm:text-xl">
         {position}
-      </div>
+      </h4>
     </div>
   );
 };

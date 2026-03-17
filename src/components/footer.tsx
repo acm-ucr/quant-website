@@ -16,9 +16,14 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6 pb-12 pt-4 sm:hidden">
           <Image src={footerLogo} alt="logo" className="h-16 w-16" />
           <div className="flex gap-5">
-            {FooterArray.map(({ icon: Icon, link }, i) => {
+            {FooterArray.map(({ icon: Icon, link, name }, i) => {
               return (
-                <Link key={i} href={link} className="text-white">
+                <Link
+                  key={i}
+                  href={link}
+                  aria-label={name}
+                  className="text-white"
+                >
                   <Icon size={24} />
                 </Link>
               );

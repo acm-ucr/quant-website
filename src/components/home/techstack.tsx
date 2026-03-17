@@ -22,7 +22,7 @@ const TechStack = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-10 px-4">
       {/* Title */}
-      <motion.div
+      <motion.h2
         className="text-[clamp(1.5rem, 4vw, 2.5rem)] font-hanken text-3xl font-bold text-white"
         transition={{ duration: 1.7, delay: 0.2 }}
         variants={animationShow}
@@ -31,7 +31,7 @@ const TechStack = () => {
         viewport={{ once: true }}
       >
         Our Tech Stack
-      </motion.div>
+      </motion.h2>
       {/* Tech Stack Icons */}
       <div className="flex max-w-[85%] flex-wrap justify-center gap-6 pb-10 sm:gap-10 md:gap-12 lg:gap-16">
         {techStack.map((tech, index) => (

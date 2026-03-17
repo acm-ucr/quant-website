@@ -12,6 +12,7 @@ const BoardPage = () => {
       transition={{ duration: 0.3 }}
       className="flex flex-col items-center justify-center gap-2 sm:gap-10"
     >
+      <title>UCR Quant - Board</title>
       <Header>OUR BOARD</Header>
 
       <motion.div

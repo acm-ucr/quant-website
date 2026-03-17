@@ -27,7 +27,7 @@ const animationUp = {
 const Description = ({ title, description, image }: DescriptionProps) => {
   return (
     <div className="relative mx-10 flex h-fit max-w-7xl flex-col px-5 sm:px-10 md:mb-10 md:px-20">
-      <motion.div
+      <motion.h2
         className="mb-5 text-center font-hanken text-3xl font-bold text-white md:mb-10 md:text-left md:text-4xl lg:pr-10"
         variants={animationRight}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -36,8 +36,8 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         viewport={{ once: true }}
       >
         {title}
-      </motion.div>
-      <motion.div
+      </motion.h2>
+      <motion.p
         className="mb-10 w-fit overflow-auto text-center font-roboto text-sm text-white md:mb-0 md:pr-12 md:text-left md:text-xl"
         variants={animationUp}
         transition={{ duration: 0.7, delay: 0.2 }}
@@ -46,7 +46,7 @@ const Description = ({ title, description, image }: DescriptionProps) => {
         viewport={{ once: true }}
       >
         {description}
-      </motion.div>
+      </motion.p>
       <div className="flex w-full flex-row justify-end">
         <Image
           src={image}

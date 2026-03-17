@@ -32,9 +32,9 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
               aria-hidden="true"
               className="flex w-1/3"
             />
-            <div className="text-center font-hanken text-5xl font-bold text-white">
+            <h1 className="text-center font-hanken text-5xl font-bold text-white">
               {children}
-            </div>
+            </h1>
             <Image
               src={rightLine}
               alt="right-line"
@@ -45,10 +45,10 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
         </div>
       ) : variant === "underline" ? (
         <div className="flex w-full flex-col items-center justify-center py-5">
-          <div className="relative inline-block w-3/4 text-center font-hanken text-5xl font-bold text-white">
+          <h1 className="relative inline-block w-3/4 text-center font-hanken text-5xl font-bold text-white">
             {children}
             <div className="mt-0 h-1 w-full bg-white" />
-          </div>
+          </h1>
         </div>
       ) : (
         <div className="hidden w-full items-center justify-center gap-x-12 py-5 md:flex">
@@ -57,9 +57,9 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
             aria-hidden="true"
             className="flex h-full"
           />
-          <div className="text-center font-hanken text-5xl font-bold text-white">
+          <h1 className="text-center font-hanken text-5xl font-bold text-white">
             {children}
-          </div>
+          </h1>
           <ChevronRight
             aria-label="right-arrow"
             aria-hidden="true"
@@ -69,10 +69,10 @@ const Header = ({ children, variant = "arrows" }: HeaderProps) => {
       )}
 
       <div className="mx-auto flex w-full flex-col items-center justify-center gap-4 py-5 md:hidden">
-        <div className="relative inline-block text-center font-hanken text-2xl font-bold text-white">
+        <h1 className="relative inline-block text-center font-hanken text-2xl font-bold text-white">
           {children}
           <div className="mt-0 h-1 w-full bg-white" />
-        </div>
+        </h1>
       </div>
     </motion.div>
   );

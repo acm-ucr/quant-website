@@ -4,6 +4,7 @@ import Projects from "@/components/project/projects";
 const ProjectsPage = () => {
   return (
     <div className="flex w-full flex-col items-center gap-8">
+      <title>UCR Quant - Projects</title>
       <Header>PROJECTS</Header>
       <Projects />
     </div>

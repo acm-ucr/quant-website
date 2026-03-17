@@ -1,5 +1,5 @@
-import Finoria from "@/public/projects/Finoria.png";
-import VCScreener from "@/public/projects/VCScreener.jpg";
+import Finoria from "@/public/projects/Finoria.webp";
+import VCScreener from "@/public/projects/VCScreener.webp";
 import { StaticImageData } from "next/image";
 
 interface Project {

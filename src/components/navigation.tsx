@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "@/public/navbar/logo.webp";
-import Bar from "@/public/navbar/task_bar.webp";
-import ExitBar from "@/public/navbar/exit_bar.webp";
+import Bar from "@/public/navbar/task_bar.svg";
+import ExitBar from "@/public/navbar/exit_bar.svg";
 import NavItems from "@/data/navigation";
 
 const Navigation = () => {

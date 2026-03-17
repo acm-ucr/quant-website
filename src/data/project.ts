@@ -1,5 +1,5 @@
 import Finoria from "@/public/projects/Finoria.png";
-import VCScreener from "@/public/projects/VCScreener.jpg"
+import VCScreener from "@/public/projects/VCScreener.jpg";
 import { StaticImageData } from "next/image";
 
 interface Project {
@@ -13,8 +13,9 @@ const projects: Project[] = [
   {
     image: VCScreener,
     name: "VC Screener",
-    link:"https://vcscreener.org/",
-    description: "VC Screener is an agentic venture capital associate designed to optimize Y Combinator applications through data-driven analysis. It benchmarks pitches against patterns identified from thousands of accepted companies, allowing founders to stop guessing and see how they stack up against the best. The tool provides a deep-dive review with clear, actionable instructions on exactly what to improve to increase acceptance odds."
+    link: "https://vcscreener.org/",
+    description:
+      "VC Screener is an agentic venture capital associate designed to optimize Y Combinator applications through data-driven analysis. It benchmarks pitches against patterns identified from thousands of accepted companies, allowing founders to stop guessing and see how they stack up against the best. The tool provides a deep-dive review with clear, actionable instructions on exactly what to improve to increase acceptance odds.",
   },
   {
     image: Finoria,

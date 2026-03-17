@@ -1,8 +1,8 @@
 import Amaan from "@/public/board/Amaan.webp";
 import Avo from "@/public/board/Avo.webp";
-import Andrew from "@/public/board/Andrew.jpeg"
-import Brandon from "@/public/board/Brandon.jpeg"
-import Joel from "@/public/board/Joel.jpeg"
+import Andrew from "@/public/board/Andrew.jpeg";
+import Brandon from "@/public/board/Brandon.jpeg";
+import Joel from "@/public/board/Joel.jpeg";
 
 export default [
   {

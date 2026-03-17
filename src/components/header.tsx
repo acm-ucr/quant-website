@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import leftLine from "/public/header/left-line.svg";
-import rightLine from "/public/header/right-line.svg";
+import leftLine from "@/public/header/left-line.svg";
+import rightLine from "@/public/header/right-line.svg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type HeaderProps = {

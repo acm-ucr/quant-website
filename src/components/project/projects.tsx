@@ -16,7 +16,7 @@ const Projects = () => {
     retry: 0, // <-- Turn OFF retries temporarily so errors show up instantly
     queryFn: async () => {
       console.log("1. Fetching data...");
-      const response = await fetch(process.env.NEXT_PUBLIC_PROJECT_API!);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_PROJECT_API}`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

@@ -41,7 +41,13 @@ const Project = ({
     >
       <div className="flex flex-col items-center justify-center p-4 text-white lg:flex-row lg:gap-10 lg:p-8 lg:text-white">
         <div className="flex h-fit w-96 items-center justify-center rounded-full lg:min-h-44 lg:min-w-44">
-          <Image className="w-20 lg:w-full" width="500" height="500" src={image_src} alt={image_alt} />
+          <Image
+            className="w-20 lg:w-full"
+            width="500"
+            height="500"
+            src={image_src}
+            alt={image_alt}
+          />
         </div>
         <div className="flex flex-col justify-center max-lg:items-center">
           <div className="flex items-center gap-2 p-3 font-questrial text-lg font-bold lg:gap-3 lg:text-4xl lg:font-bold">

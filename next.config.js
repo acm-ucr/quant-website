@@ -7,6 +7,14 @@ const nextConfig = {
     loader: "akamai",
     path: "",
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+    ]
   },
   basePath: "",
   assetPrefix: "",
